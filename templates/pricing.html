@@ -2,160 +2,300 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Plans</title>
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      id="css-main"
+      href="{% static 'css/oneui.min.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'media/favicons/favicon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'media/favicons/favicon-192x192.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
+    />
+
     <script src="{% static 'js/oneui.app.min.js' %}"></script>
-    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png'%}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'media/favicons/favicon-192x192.png'%}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'media/favicons/apple-touch-icon-180x180.png'%}">
-    
-</head>
-<body>
+
+    <style>
+      /* General styling for pricing cards */
+      .pricing-card {
+        max-width: 250px; /* Restrict width of cards */
+        margin: 0 auto; /* Center cards horizontally */
+      }
+
+      .block-content .price {
+        font-size: 2rem; /* Make price font smaller for smaller cards */
+      }
+
+      .block-content h6 {
+        font-size: 1rem; /* Make subtitle text size smaller */
+      }
+
+      .block-content .fs-sm p {
+        font-size: 0.9rem; /* Smaller font size for descriptions */
+      }
+
+      /* Ensure all cards fit in one row */
+      .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      /* Custom Plan adjustments */
+      .pricing-card[data-monthly-price="Special Request"] {
+        max-width: 250px; /* Restrict width to match other cards */
+        min-height: 300px; /* Set reasonable height */
+        font-size: 0.875rem; /* Smaller font size for custom plan */
+      }
+
+      .pricing-card[data-monthly-price="Special Request"] .price {
+        font-size: 1.5rem; /* Smaller price font */
+      }
+
+      .pricing-card[data-monthly-price="Special Request"] .fs-sm p {
+        font-size: 0.8rem; /* Smaller description font size */
+      }
+
+      .pricing-card[data-monthly-price="Special Request"] .block-header,
+      .pricing-card[data-monthly-price="Special Request"] .block-content {
+        padding: 1rem; /* Reduce padding */
+      }
+
+      .pricing-card[data-monthly-price="Special Request"] .btn {
+        font-size: 0.875rem; /* Smaller button text */
+        padding: 0.5rem 1rem; /* Smaller button padding */
+      }
+    </style>
+  </head>
+  <body>
     <div class="content">
-        <!-- Modern Design -->
-        <h2 class="content-heading">Modern Design <small>Grid Based</small></h2>
-        <div class="row">
-          <div class="col-md-6 col-xl-3">
-            <!-- Developer Plan -->
-            <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
-              <div class="block-header">
-                <h3 class="block-title">Developer</h3>
+      <h2 class="content-heading">Pricing Plans</h2>
+
+      <!-- Toggle Buttons for Monthly / Yearly -->
+      <div class="mb-4 text-center">
+        <button
+          id="monthlyBtn"
+          class="btn btn-primary mx-2"
+          onclick="togglePricing('monthly')"
+        >
+          Monthly Subscriptions
+        </button>
+        {% comment %} <button
+          id="yearlyBtn"
+          class="btn btn-outline-secondary mx-2"
+          onclick="togglePricing('yearly')"
+        >
+          Yearly
+        </button> {% endcomment %}
+      </div>
+
+      <div class="row">
+        <!-- Individual Plan -->
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="28.75"
+          data-yearly-price="345"
+        >
+          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+            <div class="block-header">
+              <h3 class="block-title">Option 1</h3>
+            </div>
+            <div class="block-content bg-body-light">
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">R28.75</p>
+                <p class="h6 text-muted">per month</p>
               </div>
-              <div class="block-content bg-body-light">
-                <div class="py-2">
-                  <p class="h1 fw-bold mb-2">$9</p>
-                  <p class="h6 text-muted">per month</p>
-                </div>
+            </div>
+            <div class="block-content">
+              <div class="fs-sm py-2">
+                <p><strong>1-5</strong> Employees</p>
               </div>
-              <div class="block-content">
-                <div class="fs-sm py-2">
-                  <p>
-                    <strong>2</strong> Projects
-                  </p>
-                  <p>
-                    <strong>10GB</strong> Storage
-                  </p>
-                  <p>
-                    <strong>15</strong> Clients
-                  </p>
-                  <p>
-                    <strong>Email</strong> Support
-                  </p>
-                </div>
+            </div>
+            <div class="block-content block-content-full bg-body-light">
+              <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Freelance Plan -->
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="26.45"
+          data-yearly-price="317.40"
+        >
+          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+            <div class="block-header">
+              <h3 class="block-title">Option 2</h3>
+            </div>
+            <div class="block-content bg-body-light">
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">R26.45</p>
+                <p class="h6 text-muted">per month</p>
               </div>
-              <div class="block-content block-content-full bg-body-light">
-                <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+            <div class="block-content">
+              <div class="fs-sm py-2">
+                <p><strong>6-10</strong> Employees</p>
               </div>
-            </a>
-            <!-- END Developer Plan -->
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <!-- Startup Plan -->
-            <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
-              <div class="block-header">
-                <h3 class="block-title">Startup</h3>
+            </div>
+            <div class="block-content block-content-full bg-body-light">
+              <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Small Business Plan -->
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="24.75"
+          data-yearly-price="297"
+        >
+          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+            <div class="block-header">
+              <h3 class="block-title">Small Business</h3>
+            </div>
+            <div class="block-content bg-body-light">
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">R24.75</p>
+                <p class="h6 text-muted">per month</p>
               </div>
-              <div class="block-content bg-body-light">
-                <div class="py-2">
-                  <p class="h1 fw-bold mb-2">$29</p>
-                  <p class="h6 text-muted">per month</p>
-                </div>
+            </div>
+            <div class="block-content">
+              <div class="fs-sm py-2">
+                <p><strong>11-50</strong> Employees</p>
               </div>
-              <div class="block-content">
-                <div class="fs-sm py-2">
-                  <p>
-                    <strong>10</strong> Projects
-                  </p>
-                  <p>
-                    <strong>30GB</strong> Storage
-                  </p>
-                  <p>
-                    <strong>100</strong> Clients
-                  </p>
-                  <p>
-                    <strong>FULL</strong> Support
-                  </p>
-                </div>
+            </div>
+            <div class="block-content block-content-full bg-body-light">
+              <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Corporate Plan -->
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="23"
+          data-yearly-price="262.20"
+        >
+          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+            <div class="block-header">
+              <h3 class="block-title">Corporate</h3>
+            </div>
+            <div class="block-content bg-body-light">
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">R23.00</p>
+                <p class="h6 text-muted">per month</p>
               </div>
-              <div class="block-content block-content-full bg-body-light">
-                <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+            <div class="block-content">
+              <div class="fs-sm py-2">
+                <p><strong>101-200</strong> Employees</p>
               </div>
-            </a>
-            <!-- END Startup Plan -->
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <!-- Business Plan -->
-            <a class="block block-rounded block-link-shadow block-themed block-fx-shadow text-center" href="javascript:void(0)">
-              <div class="block-header">
-                <h3 class="block-title">
-                  <i class="fa fa-thumbs-up me-1"></i> Business
-                </h3>
+            </div>
+            <div class="block-content block-content-full bg-body-light">
+              <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Custom Plan -->
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="Special Request"
+          data-yearly-price="Special Request"
+        >
+          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+            <div class="block-header">
+              <h3 class="block-title">Custom</h3>
+            </div>
+            <div class="block-content bg-body-light">
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">Special Request</p>
+                <p id="customPlanPriceText" class="h6 text-muted">Billed monthly</p>
+
               </div>
-              <div class="block-content bg-body-light">
-                <div class="py-2">
-                  <p class="h1 fw-bold mb-2">$49</p>
-                  <p class="h6 text-muted">per month</p>
-                </div>
+            </div>
+            <div class="block-content">
+              <div class="fs-sm py-2">
+                <p>More than 200 Employees</p>
+                <!-- Placeholder for monthly/yearly toggle text -->
               </div>
-              <div class="block-content">
-                <div class="fs-sm py-2">
-                  <p>
-                    <strong>50</strong> Projects
-                  </p>
-                  <p>
-                    <strong>100GB</strong> Storage
-                  </p>
-                  <p>
-                    <strong>1000</strong> Clients
-                  </p>
-                  <p>
-                    <strong>FULL</strong> Support
-                  </p>
-                </div>
-              </div>
-              <div class="block-content block-content-full bg-body-light">
-                <span class="btn btn-primary px-4">Sign Up</span>
-              </div>
-            </a>
-            <!-- END Business Plan -->
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <!-- VIP Plan -->
-            <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
-              <div class="block-header">
-                <h3 class="block-title">VIP</h3>
-              </div>
-              <div class="block-content bg-body-light">
-                <div class="py-2">
-                  <p class="h1 fw-bold mb-2">$99</p>
-                  <p class="h6 text-muted">per month</p>
-                </div>
-              </div>
-              <div class="block-content">
-                <div class="fs-sm py-2">
-                  <p>
-                    <strong>Unlimited</strong> Projects
-                  </p>
-                  <p>
-                    <strong>Unlimited</strong> Storage
-                  </p>
-                  <p>
-                    <strong>Unlimited</strong> Clients
-                  </p>
-                  <p>
-                    <strong>FULL</strong> Support
-                  </p>
-                </div>
-              </div>
-              <div class="block-content block-content-full bg-body-light">
-                <span class="btn btn-secondary px-4">Sign Up</span>
-              </div>
-            </a>
-          </div>
+            </div>
+            <div class="block-content block-content-full bg-body-light">
+              <span class="btn btn-secondary px-4">Sign Up</span>
+            </div>
+          </a>
         </div>
       </div>
-</body>
+    </div>
+
+    <!-- JavaScript for Toggle -->
+    <script>
+      function togglePricing(planType) {
+        // Select all pricing cards
+        const cards = document.querySelectorAll(".pricing-card");
+
+        cards.forEach((card) => {
+          const monthlyPrice = card.getAttribute("data-monthly-price");
+          const yearlyPrice = card.getAttribute("data-yearly-price");
+
+          // Skip the custom plan card
+          if (
+            monthlyPrice === "Special Request" ||
+            yearlyPrice === "Special Request"
+          ) {
+            return; // Skip this card
+          }
+
+          const priceElement = card.querySelector(".price");
+
+          // Show monthly or yearly based on the selected plan
+          if (planType === "monthly") {
+            priceElement.textContent = `R${monthlyPrice}`;
+            card.querySelector(".h6").textContent = "per month";
+          } else if (planType === "yearly") {
+            priceElement.textContent = `R${yearlyPrice}`;
+            card.querySelector(".h6").textContent = "per year";
+          }
+        });
+
+        // Update the Custom Plan
+        const customPlanText = document.getElementById("customPlanPriceText");
+        if (planType === "monthly") {
+          customPlanText.textContent = "Billed monthly";
+        } else if (planType === "yearly") {
+          customPlanText.textContent = "Billed yearly";
+        }
+
+        // Toggle button styles
+        document.getElementById("monthlyBtn").classList.toggle("btn-primary");
+        document
+          .getElementById("monthlyBtn")
+          .classList.toggle("btn-outline-secondary");
+        document.getElementById("yearlyBtn").classList.toggle("btn-primary");
+        document
+          .getElementById("yearlyBtn")
+          .classList.toggle("btn-outline-secondary");
+      }
+
+      // Initialize with monthly view
+      togglePricing("monthly");
+    </script>
+  </body>
 </html>
