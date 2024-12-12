@@ -1,4 +1,8 @@
+{% extends "base.html" %}
+
 {% load static %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,28 +23,16 @@
 <body>
     <main id="main-container">
         <!-- Hero -->
-        <div class="bg-body-light">
-          <div class="content content-full">
-            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
-              <div class="flex-grow-1">
-                <h1 class="h3 fw-bold mb-1">
-                  FAQs
-                </h1>
-                <h2 class="fs-base lh-base fw-medium text-muted mb-0">
-                  Check out answers to the most common questions.
-                </h2>
-              </div>
-              <nav class="flex-shrink-0 mt-3 mt-sm-0 ms-sm-3" aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-alt">
-                  <li class="breadcrumb-item" aria-current="page">
-                    FAQ
-                  </li>
-                </ol>
-              </nav>
-            </div>
+        <div class="bg-primary-dark">
+          <div class="content content-full text-center pt-7 pb-5">
+            <h1 class="h2 text-white mb-2">
+              FAQs
+            </h1>
+            <h2 class="h4 fw-normal text-white-75">
+              Check out answers to the most common questions.
+            </h2>
           </div>
         </div>
-        <!-- END Hero -->
 
         <!-- Page Content -->
         <div class="content content-boxed">
@@ -70,8 +62,7 @@
                     </div>
                     <div id="faq1_q2" class="collapse" role="tabpanel" aria-labelledby="faq1_h2" data-bs-parent="#faq1">
                       <div class="block-content">
-                        <p>Contact (Hyperlink to our Contact Page) our Sales
-                          and Customer Care Team:  info@connecthr.co.za</p>
+                        <p><a href="https://www.connecthr.co.za/contact" class="link">Contact</a> our Sales and Customer Care Team: info@connecthr.co.za</p> {% comment %} come back {% endcomment %}
                       </div>
                     </div>
                   </div>
@@ -188,3 +179,4 @@
       <script src="{% static 'js/oneui.app.min.js' %}"></script>
 </body>
 </html>
+{% endblock %}

@@ -37,3 +37,7 @@ def pricing_inquiry(request, plan_name, plan_amount):
         'plan_name': plan_name,
         'plan_amount': plan_amount,
     })
+
+def base(request):
+    return render(request, 'base.html')
+    

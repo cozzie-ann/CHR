@@ -1,4 +1,8 @@
+{% extends "base.html" %}
+
 {%load static%}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -214,8 +218,7 @@
 
     <style>
       body {
-        background-image: url("{% static 'media\photos\6dc90138d65eb6d4524e5a02001df070.jpg' %}"); /* Replace with your image URL */
-        background-repeat: no-repeat;
+        background-image: url("{% static 'media/photos/CONNECT WEBSITE.png' %}"); 
         background-color:black;
         background-size: cover;
         background-position: center;
@@ -248,3 +251,4 @@
     </style>
   </body>
 </html>
+{% endblock %}
