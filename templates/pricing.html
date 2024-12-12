@@ -81,11 +81,65 @@
         font-size: 0.875rem; /* Smaller button text */
         padding: 0.5rem 1rem; /* Smaller button padding */
       }
+
+      .radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.border-purple {
+  border-color: #6a1b9a !important;  /* Purple border */
+}
+
+.text-purple {
+  color: #6a1b9a !important;  /* Purple text */
+}
     </style>
   </head>
   <body>
     <div class="content">
       <h2 class="content-heading">Pricing Plans</h2>
+
+      <div class="py-5 text-center">
+        <a href="index.html">
+          {% comment %} <i class="fa fa-2x fa-circle-notch text-primary"></i> {% endcomment %}
+        </a>
+        <h1 class="h3 fw-bold mt-3 mb-2">We have exclusive plans just for you!</h1>
+      </div>
 
       <!-- Toggle Buttons for Monthly / Yearly -->
       <div class="mb-4 text-center">
@@ -96,15 +150,26 @@
         >
           Monthly Subscriptions
         </button>
-        {% comment %} <button
+        {% comment %}
+        <button
           id="yearlyBtn"
           class="btn btn-outline-secondary mx-2"
           onclick="togglePricing('yearly')"
         >
           Yearly
-        </button> {% endcomment %}
+        </button>
+        {% endcomment %}
       </div>
 
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10 col-xl-6">
+          <div class="input-group input-group-lg border border-purple p-3 rounded-3 mb-2 d-flex justify-content-center align-items-center">
+            <span class="text-purple font-weight-bold">ANNUAL BASE FEE R828 (ONCE-OFF)</span>
+          </div>
+        </div>
+      </div>
+            
+      
       <div class="row">
         <!-- Individual Plan -->
         <div
@@ -112,7 +177,10 @@
           data-monthly-price="28.75"
           data-yearly-price="345"
         >
-          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+          <a
+            class="block block-rounded block-link-shadow text-center"
+            href="{% url 'pricing:pricing_inquiry' 'Option 1' 28.75 %}"
+          >
             <div class="block-header">
               <h3 class="block-title">Option 1</h3>
             </div>
@@ -128,7 +196,7 @@
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light">
-              <span class="btn btn-secondary px-4">Sign Up</span>
+              <span class="btn btn-secondary px-4">Get Started</span>
             </div>
           </a>
         </div>
@@ -139,7 +207,10 @@
           data-monthly-price="26.45"
           data-yearly-price="317.40"
         >
-          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+          <a
+            class="block block-rounded block-link-shadow text-center"
+            href="{% url 'pricing:pricing_inquiry' 'Option 2' 26.45 %}"
+          >
             <div class="block-header">
               <h3 class="block-title">Option 2</h3>
             </div>
@@ -155,7 +226,7 @@
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light">
-              <span class="btn btn-secondary px-4">Sign Up</span>
+              <span class="btn btn-secondary px-4">Get Started</span>
             </div>
           </a>
         </div>
@@ -166,7 +237,10 @@
           data-monthly-price="24.75"
           data-yearly-price="297"
         >
-          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+          <a
+            class="block block-rounded block-link-shadow text-center"
+            href="{% url 'pricing:pricing_inquiry' 'Small Business' 24.75 %}"
+          >
             <div class="block-header">
               <h3 class="block-title">Small Business</h3>
             </div>
@@ -182,7 +256,7 @@
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light">
-              <span class="btn btn-secondary px-4">Sign Up</span>
+              <span class="btn btn-secondary px-4">Get Started</span>
             </div>
           </a>
         </div>
@@ -193,7 +267,10 @@
           data-monthly-price="23"
           data-yearly-price="262.20"
         >
-          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+          <a
+            class="block block-rounded block-link-shadow text-center"
+            href="{% url 'pricing:pricing_inquiry' 'Corporate' 23.00 %}"
+          >
             <div class="block-header">
               <h3 class="block-title">Corporate</h3>
             </div>
@@ -209,43 +286,34 @@
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light">
-              <span class="btn btn-secondary px-4">Sign Up</span>
+              <span class="btn btn-secondary px-4">Get Started</span>
             </div>
           </a>
         </div>
 
         <!-- Custom Plan -->
-        <div
-          class="col-md-2 col-xl-2 pricing-card"
-          data-monthly-price="Special Request"
-          data-yearly-price="Special Request"
-        >
-          <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
+        <div class="col-md-2 col-xl-2 pricing-card" data-monthly-price="Special Request" data-yearly-price="Special Request">
+          <a class="block block-rounded block-link-shadow text-center" href="{% url 'pricing:pricing_inquiry' 'Custom' 28.75 %}">
             <div class="block-header">
               <h3 class="block-title">Custom</h3>
             </div>
             <div class="block-content bg-body-light">
-              <div class="py-2">
-                <p class="price h1 fw-bold mb-2">Special Request</p>
-                <p id="customPlanPriceText" class="h6 text-muted">Billed monthly</p>
-
+              <div class="py-2 d-flex justify-content-center align-items-center">
+                <!-- Special Request Text -->
+                <p class="price h3 fw-bold mb-0 mr-2">Special Request</p>
               </div>
             </div>
             <div class="block-content">
               <div class="fs-sm py-2">
                 <p>More than 200 Employees</p>
-                <!-- Placeholder for monthly/yearly toggle text -->
               </div>
             </div>
             <div class="block-content block-content-full bg-body-light">
-              <span class="btn btn-secondary px-4">Sign Up</span>
+              <span class="btn btn-secondary px-4">Get Started</span>
             </div>
           </a>
         </div>
-      </div>
-    </div>
-
-    <!-- JavaScript for Toggle -->
+            <!-- JavaScript for Toggle -->
     <script>
       function togglePricing(planType) {
         // Select all pricing cards
@@ -267,10 +335,10 @@
 
           // Show monthly or yearly based on the selected plan
           if (planType === "monthly") {
-            priceElement.textContent = `R${monthlyPrice}`;
+            priceElement.textContent = R${monthlyPrice};
             card.querySelector(".h6").textContent = "per month";
           } else if (planType === "yearly") {
-            priceElement.textContent = `R${yearlyPrice}`;
+            priceElement.textContent = R${yearlyPrice};
             card.querySelector(".h6").textContent = "per year";
           }
         });

@@ -1,0 +1,250 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <form action="https://api.web3forms.com/submit" method="post">
+      {% csrf_token %}
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-4">Enquiry Form</h3>
+
+                <div class="mb-3">
+                  <label for="company_name" class="form-label"
+                    >Company Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="company_name"
+                    name="company_name"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="contact_person" class="form-label"
+                    >Contact Person</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contact_person"
+                    name="contact_person"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="number_of_employees" class="form-label"
+                    >Number of Employees</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="number_of_employees"
+                    name="number_of_employees"
+                    min="1"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="enquiry_message" class="form-label"
+                    >Enquiry Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="enquiry_message"
+                    name="enquiry_message"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="plan_name" class="form-label">Plan Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="plan_name"
+                    name="plan_name"
+                    value="{{ plan_name }}"
+                    readonly
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="plan_amount" class="form-label"
+                    >Plan Amount</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="plan_amount"
+                    name="plan_amount"
+                    readonly
+                  />
+                </div>
+
+                <!-- Hidden input for plan calculation -->
+                <input type="hidden" name="plan_calc" id="plan_calc" />
+
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="006bf9d7-8c82-4d5b-9c91-951dbae5c18a"
+                />
+
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      // Get elements
+      const numberOfEmployeesInput = document.getElementById(
+        "number_of_employees"
+      );
+      const planAmountInput = document.getElementById("plan_amount");
+      const planCalcInput = document.getElementById("plan_calc");
+      const planNameInput = document.getElementById("plan_name");
+
+      // Plan data (employee range per plan)
+      const planEmployeeLimits = {
+        "Option 1": { min: 1, max: 5, amount: 28.75 },
+        "Option 2": { min: 6, max: 10, amount: 26.45 },
+        "Small Business": { min: 11, max: 50, amount: 24.75 },
+        Corporate: { min: 101, max: 200, amount: 23.00 },
+        Custom: { min: 201, max: 1000, amount: "Custom" },
+      };
+
+      // Function to calculate the value and update the hidden input
+      function updatePlanCalculation() {
+        const numberOfEmployees = parseFloat(numberOfEmployeesInput.value) || 0; // Get number of employees, default to 0
+        const planAmount = planAmountInput.value.trim(); // Get plan amount
+
+        // If it's a custom plan, prevent calculation
+        if (planAmount === "Custom") {
+          planCalcInput.value = "Custom Plan - Contact Us";
+        } else {
+          const totalAmount = numberOfEmployees * parseFloat(planAmount);
+          planCalcInput.value = totalAmount.toFixed(2); // Format to 2 decimal places
+        }
+      }
+
+      // Function to update the employee limit and plan amount based on the selected plan
+      function updateEmployeeLimit() {
+        const selectedPlan = planNameInput.value.trim();
+        const planLimit = planEmployeeLimits[selectedPlan] || {
+          min: 0,
+          max: 1000,
+          amount: 0,
+        };
+
+        // Update the input's min and max attributes
+        numberOfEmployeesInput.min = planLimit.min;
+        numberOfEmployeesInput.max = planLimit.max;
+
+        // Update plan amount field if it's not a custom plan
+        if (planLimit.amount !== "Custom") {
+          planAmountInput.value = "R" + planLimit.amount;
+        } else {
+          planAmountInput.value = "Custom";
+        }
+
+        // Display alert with employee range
+        alert(
+          `This plan supports ${planLimit.min} to ${planLimit.max} employees.`
+        );
+      }
+
+      // Add event listeners to recalculate when the user updates the number of employees
+      numberOfEmployeesInput.addEventListener("input", updatePlanCalculation);
+
+      // Event listener to update the employee limit when the plan changes
+      planNameInput.addEventListener("change", updateEmployeeLimit);
+
+      // Optional: Update hidden input on page load to handle default values
+      window.addEventListener("load", () => {
+        updatePlanCalculation();
+        updateEmployeeLimit(); // Ensure limits are set on page load
+      });
+    </script>
+
+    <style>
+      body {
+        background-image: url("{% static 'media\photos\6dc90138d65eb6d4524e5a02001df070.jpg' %}"); /* Replace with your image URL */
+        background-repeat: no-repeat;
+        background-color:black;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Make the background cover the full height */
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      /* Optional: Responsive tweaks */
+      @media (max-width: 576px) {
+        .form-container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </body>
+</html>
