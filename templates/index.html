@@ -1,8 +1,4 @@
-{% extends "base.html" %}
-
-{%load static%}
-
-{% block content %}
+{% extends "base.html" %} {%load static%} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,11 +31,7 @@
       rel="stylesheet"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link
-      rel="stylesheet"
-      
-      href="{% static 'css/styles.css' %}"
-    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body id="page-top">
     <!-- Navigation-->
@@ -252,19 +244,21 @@
             ></button>
           </div>
           <div class="modal-body border-0 p-4">
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <form
+              id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
               <div class="form-floating mb-3">
                 <input
                   class="form-control"
                   id="name"
                   type="text"
                   placeholder="Enter your name..."
-                  data-sb-validations="required"
+                  name="name"
+                  required
                 />
                 <label for="name">Company Name</label>
-                <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
-                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -272,15 +266,10 @@
                   id="contact-person"
                   type="text"
                   placeholder="Enter contact person's name..."
-                  data-sb-validations="required"
+                  name="contact_person"
+                  required
                 />
                 <label for="contact-person">Contact Person Name</label>
-                <div
-                  class="invalid-feedback"
-                  data-sb-feedback="contact-person:required"
-                >
-                  A name is required.
-                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -288,29 +277,21 @@
                   id="email"
                   type="email"
                   placeholder="name@example.com"
-                  data-sb-validations="required,email"
+                  name="email"
+                  required
                 />
                 <label for="email">Email</label>
-                <div class="invalid-feedback" data-sb-feedback="email:required">
-                  An email is required.
-                </div>
               </div>
               <div class="form-floating mb-3">
                 <textarea
                   class="form-control"
                   id="message"
-                  type="text"
                   placeholder="Enter your message..."
                   style="height: 10rem"
-                  data-sb-validations="required"
+                  name="message"
+                  required
                 ></textarea>
                 <label for="message">Message</label>
-                <div
-                  class="invalid-feedback"
-                  data-sb-feedback="message:required"
-                >
-                  A message is required.
-                </div>
               </div>
               <div class="d-grid">
                 <button
@@ -321,6 +302,12 @@
                   Submit
                 </button>
               </div>
+              <!-- Hidden field for Web3Forms -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="2ae97d79-731b-47bb-92b5-9cab34803def"
+              />
             </form>
           </div>
         </div>

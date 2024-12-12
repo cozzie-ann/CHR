@@ -1,8 +1,4 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +19,11 @@
       sizes="180x180"
       href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
     />
-    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}" />
+    <link
+      rel="stylesheet"
+      id="css-main"
+      href="{% static 'css/oneui.min.css' %}"
+    />
 
     <script src="{%static 'js/setTheme.js'%}"></script>
   </head>
@@ -38,10 +38,17 @@
           <div class="content content-full text-center">
             <h1 class="display-4 fw-semibold text-white mb-2">About Us</h1>
             <p class="fs-4 fw-normal text-white-50 mb-5">
-              Connect HR is a 100% black-owned South African company that provides an integrated, web-based Human Resource management system designed to streamline HR processes for small businesses, companies employing minimum-wage workers, frontline staff, and HR consultants servicing small businesses.
-Our system covers all aspects of HR management, including payroll, leave management, document control, tax calculations, compliance reporting, expense management, and more.
+              Connect HR is a 100% black-owned South African company that
+              provides an integrated, web-based Human Resource management system
+              designed to streamline HR processes for small businesses,
+              companies employing minimum-wage workers, frontline staff, and HR
+              consultants servicing small businesses. Our system covers all
+              aspects of HR management, including payroll, leave management,
+              document control, tax calculations, compliance reporting, expense
+              management, and more.
             </p>
-            {% comment %} <div>
+            {% comment %}
+            <div>
               <a
                 class="btn btn-primary px-3 py-2 m-1"
                 href="javascript:void(0)"
@@ -51,7 +58,8 @@ Our system covers all aspects of HR management, including payroll, leave managem
               <a class="btn btn-dark px-3 py-2 m-1" href="javascript:void(0)">
                 <i class="fa fa-fw fa-link opacity-50 me-1"></i> Call to action
               </a>
-            </div> {% endcomment %}
+            </div>
+            {% endcomment %}
           </div>
         </div>
       </div>
@@ -62,11 +70,19 @@ Our system covers all aspects of HR management, including payroll, leave managem
         <div class="content content-full">
           <div class="py-5 text-center push">
             <h2 class="h1 mb-2">Mission</h2>
-            <h3 class="fw-normal text-muted mb-0">Our mission is to simplify and automate HR tasks, allowing businesses to focus on growth while ensuring compliance with South Africa’s labour laws and tax regulations. We offer a comprehensive, affordable, and user-friendly solution that scales with your business.</h3>
+            <h3 class="fw-normal text-muted mb-0">
+              Our mission is to simplify and automate HR tasks, allowing
+              businesses to focus on growth while ensuring compliance with South
+              Africa’s labour laws and tax regulations. We offer a
+              comprehensive, affordable, and user-friendly solution that scales
+              with your business.
+            </h3>
           </div>
+          {% comment %}
           <div class="text-center">
             <p>Your content..</p>
           </div>
+          {% endcomment %}
         </div>
       </div>
       <!-- END Section 1 -->
@@ -76,91 +92,143 @@ Our system covers all aspects of HR management, including payroll, leave managem
         <div class="content content-full">
           <div class="py-5 text-center push">
             <h2 class="h1 mb-2">Vision</h2>
-            <h3 class="fw-normal text-muted mb-0">To be the leading provider of innovative, efficient, and compliant HR solutions that empower businesses of all sizes — from small businesses and frontline employers to HR consultants — with the tools they need to manage their workforce seamlessly.</h3>
+            <h3 class="fw-normal text-muted mb-0">
+              To be the leading provider of innovative, efficient, and compliant
+              HR solutions that empower businesses of all sizes — from small
+              businesses and frontline employers to HR consultants — with the
+              tools they need to manage their workforce seamlessly.
+            </h3>
           </div>
+          {% comment %}
           <div class="text-center">
             <p>Your content..</p>
           </div>
+          {% endcomment %}
         </div>
       </div>
       <!-- END Section 2 -->
 
-<!-- Section 3 -->
-<div class="bg-body-extra-light">
-    <div class="content content-full">
-      <div class="py-5 text-center push">
-        <h2 class="h1 mb-2">Watch our podcast</h2>
-        <h3 class="fw-normal text-muted mb-0">Subtitle</h3>
-      </div>
-      <div class="text-center">
-        <p>Your content..</p>
-        <!-- Embed YouTube Video -->
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe 
-            class="embed-responsive-item" 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <!-- Section 3 -->
+      <div class="bg-body-extra-light">
+        <div class="content content-full">
+          <div class="py-5 text-center push">
+            <h2 class="h1 mb-2">Watch our podcast</h2>
+            <h3 class="fw-normal text-muted mb-0">Subtitle</h3>
+          </div>
+          <div class="text-center">
+            <p><a href="https://www.youtube.com/@ConnectHRPodcast" class="link">ConnectHRPodcast</a></p>
+            <!-- Embed YouTube Video -->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/aJAFG6T0Ark?si=753uw-6fEpLOYgye"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- END Section 3 -->
-  
+      <!-- END Section 3 -->
+
       <!-- Section 4 -->
       <div class="bg-body-light">
         <div class="content content-full">
           <div class="py-5 text-center push">
             <h2 class="h1 mb-2">Our Strategic Partners</h2>
           </div>
-          {% comment %} <div class="text-center mb-5">
+          {% comment %}
+          <div class="text-center mb-5">
             <p>Your content..</p>
-          </div> {% endcomment %}
+          </div>
+          {% endcomment %}
           <div class="row justify-content-center">
             <!-- Partner Logo 1 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/Adonai.png' %}" alt="Partner 1" class="img-fluid">
+              <img
+                src="{% static 'media/photos/Adonai.png' %}"
+                alt="Partner 1"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 2 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/BA.png' %}" alt="Partner 2" class="img-fluid">
+              <img
+                src="{% static 'media/photos/BA.png' %}"
+                alt="Partner 2"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 3 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/EB.png' %}" alt="Partner 3" class="img-fluid">
+              <img
+                src="{% static 'media/photos/EB.png' %}"
+                alt="Partner 3"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 4 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/EE.png' %}" alt="Partner 4" class="img-fluid">
+              <img
+                src="{% static 'media/photos/EE.png' %}"
+                alt="Partner 4"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 5 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/Mapunyane.png' %}" alt="Partner 5" class="img-fluid">
+              <img
+                src="{% static 'media/photos/Mapunyane.png' %}"
+                alt="Partner 5"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 6 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/Mulax.png' %}" alt="Partner 6" class="img-fluid">
+              <img
+                src="{% static 'media/photos/Mulax.png' %}"
+                alt="Partner 6"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 7 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/MyDough.png' %}" alt="Partner 7" class="img-fluid">
+              <img
+                src="{% static 'media/photos/MyDough.png' %}"
+                alt="Partner 7"
+                class="img-fluid"
+              />
             </div>
             <!-- Partner Logo 8 -->
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/Purcee.png' %}" alt="Partner 8" class="img-fluid">
+              <img
+                src="{% static 'media/photos/Purcee.png' %}"
+                alt="Partner 8"
+                class="img-fluid"
+              />
             </div>
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/Telkom.png' %}" alt="Partner 9" class="img-fluid">
+              <img
+                src="{% static 'media/photos/Telkom.png' %}"
+                alt="Partner 9"
+                class="img-fluid"
+              />
             </div>
             <div class="col-md-2 col-sm-3 mb-4">
-              <img src="{% static 'media/photos/VHG.png' %}" alt="Partner 10" class="img-fluid">
+              <img
+                src="{% static 'media/photos/VHG.png' %}"
+                alt="Partner 10"
+                class="img-fluid"
+              />
             </div>
-
           </div>
         </div>
       </div>
-            <!-- END Section 4 -->
+      <!-- END Section 4 -->
     </main>
     <script src="{%static 'js/oneui.app.min.js'%}"></script>
   </body>
