@@ -34,10 +34,10 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <!-- Navbar without fixed-top -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav" style="background: linear-gradient(135deg, #FB5618, #EE0979); color: white">
-        <div class="container px-5" >
-            <a class="navbar-brand fw-bold" href="{% url 'pricing:home' %}">Connect HR</a>
+        <div class="container px-5">
+            <a class="navbar-brand text-white fw-bold" href="{% url 'pricing:home' %}">Connect HR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -46,19 +46,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="{% url 'pricing:home' %}">Home</a>
+                        <a class="nav-link text-white me-lg-3" href="{% url 'pricing:home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="{% url 'pricing:about' %}">About Us</a>
+                        <a class="nav-link text-white me-lg-3" href="{% url 'pricing:about' %}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="{% url 'pricing:services' %}">Services</a>
+                        <a class="nav-link text-white me-lg-3" href="{% url 'pricing:services' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="{% url 'pricing:pricing' %}">Pricing</a>
+                        <a class="nav-link text-white me-lg-3" href="{% url 'pricing:pricing' %}">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="{% url 'pricing:faq' %}">FAQs</a>
+                        <a class="nav-link text-white me-lg-3" href="{% url 'pricing:faq' %}">FAQs</a>
                     </li>
                 </ul>
                 <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal"
@@ -79,6 +79,7 @@
         {% endblock %}
     </main>
 
+    <!-- Footer -->
     <footer id="page-footer" class="bg-[#FB5618] text-white" style=" background: linear-gradient(135deg, #FB5618, #EE0979);">
         <div class="content py-3">
             <div class="row fs-sm">
@@ -87,12 +88,104 @@
                     <a class="fw-semibold" href="https://pixelcave.com" target="_blank">pixelcave</a>
                 </div>
                 <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-                    <a class="fw-semibold" href="{% url 'pricing:home' %}" target="_blank" style = "color:white ">Connect HR</a>
+                    <a class="fw-semibold" href="{% url 'pricing:home' %}" target="_blank" style="color:white ">Connect HR</a>
                     &copy; <span data-toggle="year-copy"></span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Feedback Modal (Globally Accessible) -->
+    <div
+        class="modal fade"
+        id="feedbackModal"
+        tabindex="-1"
+        aria-labelledby="feedbackModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                    <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">
+                        Contact Us
+                    </h5>
+                    <button
+                        class="btn-close btn-close-white"
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body border-0 p-4">
+                    <form
+                        id="contactForm"
+                        action="https://api.web3forms.com/submit"
+                        method="POST"
+                    >
+                        <div class="form-floating mb-3">
+                            <input
+                                class="form-control"
+                                id="name"
+                                type="text"
+                                placeholder="Enter your name..."
+                                name="name"
+                                required
+                            />
+                            <label for="name">Company Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                class="form-control"
+                                id="contact-person"
+                                type="text"
+                                placeholder="Enter contact person's name..."
+                                name="contact_person"
+                                required
+                            />
+                            <label for="contact-person">Contact Person Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                class="form-control"
+                                id="email"
+                                type="email"
+                                placeholder="name@example.com"
+                                name="email"
+                                required
+                            />
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                placeholder="Enter your message..."
+                                style="height: 10rem"
+                                name="message"
+                                required
+                            ></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <div class="d-grid">
+                            <button
+                                class="btn btn-primary btn-lg"
+                                id="submitButton"
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                        <!-- Hidden field for Web3Forms -->
+                        <input
+                            type="hidden"
+                            name="access_key"
+                            value="2ae97d79-731b-47bb-92b5-9cab34803def"
+                        />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS & Popper.js (via CDN) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
