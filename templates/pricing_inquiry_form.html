@@ -132,7 +132,7 @@
                 <input
                   type="hidden"
                   name="access_key"
-                  value="006bf9d7-8c82-4d5b-9c91-951dbae5c18a"
+                  value="2ae97d79-731b-47bb-92b5-9cab34803def"
                 />
 
                 <div class="text-center mt-4">
@@ -165,18 +165,26 @@
 
       // Function to calculate the value and update the hidden input
       function updatePlanCalculation() {
-        const numberOfEmployees = parseFloat(numberOfEmployeesInput.value) || 0; // Get number of employees, default to 0
-        const planAmount = planAmountInput.value.trim(); // Get plan amount
-
+        const numberOfEmployees = parseInt(numberOfEmployeesInput.value, 10) || 0; // Get number of employees, default to 0
+        let planAmount = planAmountInput.value.trim(); // Get plan amount
+    
+        // Remove "R" symbol from plan amount if present
+        planAmount = parseFloat(planAmount.replace("R", "").trim());
+    
+        // Check if the planAmount is a valid number
+        if (isNaN(planAmount)) {
+            console.error("Invalid plan amount:", planAmount);
+            return; // Stop execution if the planAmount is invalid
+        }
+    
         // If it's a custom plan, prevent calculation
         if (planAmount === "Custom") {
-          planCalcInput.value = "Custom Plan - Contact Us";
+            planCalcInput.value = "Custom Plan - Contact Us";
         } else {
-          const totalAmount = numberOfEmployees * parseFloat(planAmount);
-          planCalcInput.value = totalAmount.toFixed(2); // Format to 2 decimal places
+            const totalAmount = numberOfEmployees * planAmount; // Calculate total amount
+            planCalcInput.value = totalAmount.toFixed(2); // Format to 2 decimal places
         }
-      }
-
+    }
       // Function to update the employee limit and plan amount based on the selected plan
       function updateEmployeeLimit() {
         const selectedPlan = planNameInput.value.trim();
