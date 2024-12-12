@@ -1,4 +1,8 @@
-{%load static%}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,3 +165,4 @@ Our system covers all aspects of HR management, including payroll, leave managem
     <script src="{%static 'js/oneui.app.min.js'%}"></script>
   </body>
 </html>
+{% endblock %}

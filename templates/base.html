@@ -2,139 +2,102 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Base{% endblock %}</title>
 
     <!-- Favicon links -->
-    <link
-      rel="shortcut icon"
-      href="{% static 'media/favicons/favicon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="{% static 'media/favicons/favicon-192x192.png' %}"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
-    />
+    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'media/favicons/favicon-192x192.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}" />
 
     <!-- Bootstrap CSS (via CDN) -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom Styles -->
-    <link
-      rel="stylesheet"
-      id="css-main"
-      href="{% static 'css/oneui.min.css' %}"
-    />
+    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <!-- Scripts -->
     <script src="{% static 'js/setTheme.js' %}"></script>
     <script>
-      // Ensure the year copy in the footer works
-      document.addEventListener("DOMContentLoaded", function () {
-        const yearElement = document.querySelector("[data-toggle='year-copy']");
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        }
-      });
+        // Ensure the year copy in the footer works
+        document.addEventListener("DOMContentLoaded", function () {
+            const yearElement = document.querySelector("[data-toggle='year-copy']");
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
     </script>
-  </head>
+</head>
 
-  <body class="d-flex flex-column min-vh-100">
-    <!-- Ensuring full height with flexbox -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
-      id="mainNav"
-    >
-      <div class="container px-5">
-        <a class="navbar-brand fw-bold" href="#page-top">Connect HR</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="bi-list"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-            <li class="nav-item">
-              <a class="nav-link me-lg-3" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-lg-3" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-lg-3" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-lg-3" href="#pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-lg-3" href="#faq">FAQs</a>
-            </li>
-          </ul>
-          <button
-            class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
-            data-bs-toggle="modal"
-            data-bs-target="#feedbackModal"
-          >
-            <span class="d-flex align-items-center">
-              <i class="bi-chat-text-fill me-2"></i>
-              <span class="small">Contact Us</span>
-            </span>
-          </button>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar without fixed-top -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="{% url 'pricing:home' %}">Connect HR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="{% url 'pricing:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="{% url 'pricing:about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="{% url 'pricing:services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="{% url 'pricing:pricing' %}">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="{% url 'pricing:faq' %}">FAQs</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal"
+                    data-bs-target="#feedbackModal">
+                    <span class="d-flex align-items-center">
+                        <i class="bi-chat-text-fill me-2"></i>
+                        <span class="small">Contact Us</span>
+                    </span>
+                </button>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Page Content -->
     <main class="flex-fill">
-      {% block content %}
-      <!-- This is where content from child templates will be injected -->
-      {% endblock %}
+        {% block content %}
+        <!-- This is where content from child templates will be injected -->
+        {% endblock %}
     </main>
 
     <footer id="page-footer" class="bg-body-extra-light">
-      <div class="content py-3">
-        <div class="row fs-sm">
-          <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end">
-            Crafted with <i class="fa fa-heart text-danger"></i> by
-            <a class="fw-semibold" href="https://pixelcave.com" target="_blank"
-              >pixelcave</a
-            >
-          </div>
-          <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-            <a
-              class="fw-semibold"
-              href="https://pixelcave.com/products/oneui"
-              target="_blank"
-              >Connect HR</a
-            >
-            &copy; <span data-toggle="year-copy"></span>
-          </div>
+        <div class="content py-3">
+            <div class="row fs-sm">
+                <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end">
+                    Crafted with <i class="fa fa-heart text-danger"></i> by
+                    <a class="fw-semibold" href="https://pixelcave.com" target="_blank">pixelcave</a>
+                </div>
+                <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
+                    <a class="fw-semibold" href="https://pixelcave.com/products/oneui" target="_blank">Connect HR</a>
+                    &copy; <span data-toggle="year-copy"></span>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
 
     <!-- Bootstrap JS & Popper.js (via CDN) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+</body>
+
 </html>

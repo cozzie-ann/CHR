@@ -11,6 +11,8 @@ urlpatterns = [
     path('pricing/', views.pricing, name='pricing'),
     path('contact/', views.contact, name='contact'),
     path('faq/', views.faq, name='faq'),
+    path('services/', views.services, name='services'),
+
     path('inquiry/<str:plan_name>/<float:plan_amount>/', views.pricing_inquiry, name='pricing_inquiry'),
     path('base/', views.base, name='base'),
 
