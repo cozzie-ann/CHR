@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'media/favicons/favicon-192x192.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
+    />
+    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}" />
+
+    <script src="{% static 'js/setTheme.js' %}"></script>
+  </head>
+
+  <body>
+    <main id="main-container">
+      <!-- Hero Section -->
+      <div
+        class="bg-image"
+        style="background-image: url('{% static 'assets/media/photos/photo36@2x.jpg' %}')"
+      >
+        <div class="bg-primary-dark-op py-9 overflow-hidden">
+          <div class="content content-full text-center">
+            <h1 class="display-4 fw-semibold text-white mb-2">Connect HR</h1>
+            <p class="fs-4 fw-normal text-white-50 mb-5">
+                Seamless HR solutions for the everyday company.
+            </p>
+            <a class="btn btn-primary px-3 py-2 m-1" href="#about">
+              <i class="fa fa-fw fa-link opacity-50 me-1"></i> Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- END Hero Section -->
+
+      <!-- About Us Section (Included from about.html) -->
+      <div id="about">
+        {% include 'about.html' %}
+      </div>
+
+
+      <!-- Footer Section -->
+      <footer class="bg-body-light py-5">
+        <div class="content content-full text-center">
+          <p>&copy; 2024 Connect HR. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="{% static 'js/oneui.app.min.js' %}"></script>
+  </body>
+</html>

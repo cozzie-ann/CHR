@@ -1,73 +1,128 @@
-<style>
-    .toggle-switch {
-        position: relative;
-        width: 100px;
-        height: 50px;
-        --light: #d8dbe0;
-        --dark: #28292c;
-        --link: rgb(27, 129, 112);
-        --link-hover: rgb(24, 94, 82);
-      }
-      
-      .switch-label {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-        background-color: var(--dark);
-        border-radius: 25px;
-        cursor: pointer;
-        border: 3px solid var(--dark);
-      }
-      
-      .checkbox {
-        position: absolute;
-        display: none;
-      }
-      
-      .slider {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      .checkbox:checked ~ .slider {
-        background-color: var(--light);
-      }
-      
-      .slider::before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-        box-shadow: inset 12px -4px 0px 0px var(--light);
-        background-color: var(--dark);
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-      
-      .checkbox:checked ~ .slider::before {
-        -webkit-transform: translateX(50px);
-        -ms-transform: translateX(50px);
-        transform: translateX(50px);
-        background-color: var(--dark);
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
-      
-</style>
 
-<div class="mb-4 text-center">
-    <div class="toggle-switch">
-      <label class="switch-label">
-        <input type="checkbox" class="checkbox" id="pricingToggle" onchange="togglePricing()">
-        <span class="slider"></span>
-      </label>
+<!-- Feedback Modal-->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-gradient-primary-to-secondary p-4">
+        <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Contact Us </h5>
+        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body border-0 p-4">
+        <!-- Contact Form -->
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+          <!-- Name input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="companyName" type="text" placeholder="Enter your company name..." data-sb-validations="required" />
+            <label for="companyName">Company Name</label>
+            <div class="invalid-feedback" data-sb-feedback="companyName:required">A company name is required.</div>
+          </div>
+          <!-- Contact Person Full Name input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="contactPerson" type="text" placeholder="Enter full name..." data-sb-validations="required" />
+            <label for="contactPerson">Contact Person Full Name</label>
+            <div class="invalid-feedback" data-sb-feedback="contactPerson:required">A name is required.</div>
+          </div>
+          <!-- Email input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+            <label for="email">Company Email Address</label>
+            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+          </div>
+          <!-- Phone number input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <label for="phone">Contact Person Phone Number</label>
+            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+          </div>
+          <!-- Message input-->
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+            <label for="message">Leave Us A Message</label>
+            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+          </div>
+          <!-- Submit success message-->
+          <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+              <div class="fw-bolder">Form submission successful!</div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- Pricing Toggle Switch -->
+<div class="mb-4 text-center">
+  <div class="toggle-switch">
+    <label class="switch-label">
+      <input type="checkbox" class="checkbox" id="pricingToggle" onchange="togglePricing()">
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
+
+<style>
+  .toggle-switch {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
+
+  .switch-label {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+
+  .checkbox {
+    position: absolute;
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .checkbox:checked ~ .slider {
+    background-color: var(--light);
+  }
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .checkbox:checked ~ .slider::before {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+</style>
