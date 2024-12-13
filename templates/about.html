@@ -34,79 +34,48 @@
         class="bg-image"
         style="background-image: url('assets/media/photos/photo36@2x.jpg')"
       >
-      <div class="bg-body-light"> <!-- Changed this section to use bg-body-light -->
-        <div class="bg-primary-dark-op py-9 overflow-hidden">
-          <div class="content content-full text-center">
-            <h1 class="display-4 fw-semibold text-white mb-2">About Us</h1>
-            <p class="fs-4 fw-normal text-white-50 mb-5">
-              Connect HR is a 100% black-owned South African company that
-              provides an integrated, web-based Human Resource management system
-              designed to streamline HR processes for small businesses,
-              companies employing minimum-wage workers, frontline staff, and HR
-              consultants servicing small businesses. Our system covers all
-              aspects of HR management, including payroll, leave management,
-              document control, tax calculations, compliance reporting, expense
-              management, and more.
-            </p>
-          </div>
-        </div>
-      </div>      </div>
-      <!-- END Hero -->
+    
 
-      <!-- Section 1 -->
-      <div class="bg-body-extra-light">
-        <div class="content content-full">
-          <div class="py-5 text-center push">
-            <h2 class="h1 mb-2">Mission</h2>
-            <h3 class="fw-normal text-muted mb-0">
-              Our mission is to simplify and automate HR tasks, allowing
-              businesses to focus on growth while ensuring compliance with South
-              Africa’s labour laws and tax regulations. We offer a
-              comprehensive, affordable, and user-friendly solution that scales
-              with your business.
-            </h3>
-          </div>
-          {% comment %}
-          <div class="text-center">
-            <p>Your content..</p>
-          </div>
-          {% endcomment %}
-        </div>
-      </div>
-      <!-- END Section 1 -->
-
-      <!-- Section 2 -->
       <div class="bg-body-light">
         <div class="content content-full">
-          <div class="py-5 text-center push">
-            <h2 class="h1 mb-2">Vision</h2>
-            <h3 class="fw-normal text-muted mb-0">
-              To be the leading provider of innovative, efficient, and compliant
-              HR solutions that empower businesses of all sizes — from small
-              businesses and frontline employers to HR consultants — with the
-              tools they need to manage their workforce seamlessly.
-            </h3>
+          <div class="row text-center py-5">
+            <!-- About Column -->
+            <div class="col-md-4">
+              <h3 class="h3 mb-3">About Us</h3>
+              <p>
+                Connect HR is a 100% black-owned South African company that provides an integrated, web-based Human Resource management system designed to streamline HR processes for small businesses, companies employing minimum-wage workers, frontline staff, and HR consultants servicing small businesses.
+              </p>
+            </div>
+
+            <!-- Vision Column -->
+            <div class="col-md-4">
+              <h3 class="h3 mb-3">Vision</h3>
+              <p>
+                To be the leading provider of innovative, efficient, and compliant HR solutions that empower businesses of all sizes — from small businesses and frontline employers to HR consultants — with the tools they need to manage their workforce seamlessly.
+              </p>
+            </div>
+
+            <!-- Mission Column -->
+            <div class="col-md-4">
+              <h3 class="h3 mb-3">Mission</h3>
+              <p>
+                Our mission is to simplify and automate HR tasks, allowing businesses to focus on growth while ensuring compliance with South Africa’s labour laws and tax regulations. We offer a comprehensive, affordable, and user-friendly solution that scales with your business.
+              </p>
+            </div>
           </div>
-          {% comment %}
-          <div class="text-center">
-            <p>Your content..</p>
-          </div>
-          {% endcomment %}
         </div>
       </div>
-      <!-- END Section 2 -->
+      <!-- END Section: About, Vision, Mission -->
 
-      <!-- Section 3 -->
+      <!-- Section: Podcast -->
       <div class="bg-body-extra-light">
         <div class="content content-full">
           <div class="py-5 text-center push">
-            <h2 class="h1 mb-2">Watch our podcast</h2>
+            <h2 class="h1 mb-2">Watch our podcast </h2>
           </div>
           <div class="text-center">
             <p>
-              <a href="https://www.youtube.com/@ConnectHRPodcast" class="link"
-                >ConnectHR Podcast</a
-              >
+              <a href="https://www.youtube.com/@ConnectHRPodcast" class="link">ConnectHR Podcast</a>
             </p>
             <!-- Embed YouTube Video -->
             <div class="embed-responsive embed-responsive-16by9">
@@ -124,21 +93,16 @@
           </div>
         </div>
       </div>
-      <!-- END Section 3 -->
+      <!-- END Section: Podcast -->
 
-      <!-- Section 4 -->
+      <!-- Section: Strategic Partners -->
       <div class="bg-body-light">
         <div class="content content-full">
           <div class="py-5 text-center push">
             <h2 class="h1 mb-2">Our Strategic Partners and Clients</h2>
           </div>
-          {% comment %}
-          <div class="text-center mb-5">
-            <p>Your content..</p>
-          </div>
-          {% endcomment %}
           <div class="row justify-content-center">
-            <!-- Partner Logo 1 -->
+            <!-- Partner Logos -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/Adonai.png' %}"
@@ -146,7 +110,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 2 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/BA.png' %}"
@@ -154,7 +117,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 3 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/EB.png' %}"
@@ -162,7 +124,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 4 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/EE.png' %}"
@@ -170,7 +131,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 5 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/Mapunyane.png' %}"
@@ -178,7 +138,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 6 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/Mulax.png' %}"
@@ -186,7 +145,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 7 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/MyDough.png' %}"
@@ -194,7 +152,6 @@
                 class="img-fluid"
               />
             </div>
-            <!-- Partner Logo 8 -->
             <div class="col-md-2 col-sm-3 mb-4">
               <img
                 src="{% static 'media/photos/Purcee.png' %}"
@@ -219,9 +176,13 @@
           </div>
         </div>
       </div>
-      <!-- END Section 4 -->
+      <!-- END Section: Strategic Partners -->
+
     </main>
-    <script src="{%static 'js/oneui.app.min.js'%}"></script>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/oneui.app.min.js' %}"></script>
   </body>
 </html>
+
 {% endblock %}
