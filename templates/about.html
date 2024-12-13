@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="shortcut icon" href="{%static 'media/favicons/favicon.png'%}" />
+    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}" />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="{%static 'media/favicons/favicon-192x192.png'%}"
+      href="{% static 'media/favicons/favicon-192x192.png' %}"
     />
     <link
       rel="apple-touch-icon"
@@ -24,19 +26,14 @@
       id="css-main"
       href="{% static 'css/oneui.min.css' %}"
     />
-
-    <script src="{%static 'js/setTheme.js'%}"></script>
+    <script src="{% static 'js/setTheme.js' %}"></script>
   </head>
   <body>
     <main id="main-container">
       <!-- Hero -->
-      <div
-        class="bg-image"
-        style="background-image: url('assets/media/photos/photo36@2x.jpg')"
-      >
+      
     
-
-      <div class="bg-body-light">
+      <div class="bg-body-light" style="background-image: url('{% static 'media/photos/clock.png' %}');">
         <div class="content content-full">
           <div class="row text-center py-5">
             <!-- About Column -->
@@ -46,7 +43,7 @@
                 Connect HR is a 100% black-owned South African company that provides an integrated, web-based Human Resource management system designed to streamline HR processes for small businesses, companies employing minimum-wage workers, frontline staff, and HR consultants servicing small businesses.
               </p>
             </div>
-
+      
             <!-- Vision Column -->
             <div class="col-md-4">
               <h3 class="h3 mb-3">Vision</h3>
@@ -54,7 +51,7 @@
                 To be the leading provider of innovative, efficient, and compliant HR solutions that empower businesses of all sizes — from small businesses and frontline employers to HR consultants — with the tools they need to manage their workforce seamlessly.
               </p>
             </div>
-
+      
             <!-- Mission Column -->
             <div class="col-md-4">
               <h3 class="h3 mb-3">Mission</h3>
@@ -65,7 +62,7 @@
           </div>
         </div>
       </div>
-      <!-- END Section: About, Vision, Mission -->
+            <!-- END Section: About, Vision, Mission -->
 
       <!-- Section: Podcast -->
       <div class="bg-body-extra-light">
