@@ -73,14 +73,14 @@
 </div>
 
 <!-- Section: Statistics -->
-<section class="statistics-section py-5">
+<section class="statistics-section py-5" style="background-color: #ffffff">
   <div class="container">
     <!-- Title: Statistics -->
-    <h1 class="text-center mb-4 text-white">Statistics</h1>
+    <h1 class="text-center mb-4" style="color: #73408b">Statistics</h1>
 
     <!-- Centered Text Div -->
     <div class="text-center">
-      <p class="lead text-white">
+      <p class="lead" style="color: #73408b">
         Here are some key statistics highlighting our achievements and growth in
         2024:
       </p>
@@ -119,11 +119,13 @@
 </section>
 
 <!-- Section: Partners -->
-<section class="bg-body-light py-5">
+<section class="py-5" style="background-color: #ffffff;  margin-bottom: 30px;" >
   <div class="container">
     <!-- Partner Logos Section Heading with border -->
-    <div class="py-3 text-center border-section">
-      <h2 class="h1 mb-0">Our Strategic Partners and Clients</h2>
+    <div class="py-3 text-center border-section" style="display: flex; justify-content: center;
+          align-items: center;
+          height: 100%;">
+      <h2 class="h2 mb-0">Our Strategic Partners and Clients</h2>
     </div>
 
     <!-- Partner Logos Container with Border and White Background -->
@@ -279,8 +281,6 @@
     </div>
   </div>
 </section>
-
-<!-- Add the CSS for Continuous Marquee effect -->
 
 {% block extra_css %}
 <!-- External Font -->
@@ -534,35 +534,42 @@
     }
 
 
-
       .marquee-wrapper {
         overflow: hidden;
-        width: 100%;
+        width: 100%; /* Set to 100% to make it span across the container width */
       }
 
       .partner-logos {
         display: flex;
-        animation: scroll-left 20s linear infinite;
+        animation: scroll-left 25s linear infinite;
       }
 
       .logo-item {
-        flex: 0 0 auto;
-        margin-right: 30px; /* space between logos */
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        margin-right: 30px;
       }
 
       .logo-item img {
-        max-height: 60px; /* Adjust the height of the logos as needed */
+        max-height: 60px;
         object-fit: contain;
       }
 
-      /* Keyframes for Continuous Scroll with Wrapping Effect */
+      /* Keyframe for scrolling logos horizontally */
       @keyframes scroll-left {
         0% {
           transform: translateX(0);
         }
         100% {
-          transform: translateX(-50%); /* Scroll the content until half of it disappears */
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Optional: Adjust the partner logos size on larger screens */
+      @media (min-width: 1200px) {
+        .logo-item img {
+          max-height: 80px; /* Increase logo size on larger screens */
         }
       }
 </style>
+
 {% endblock %}
