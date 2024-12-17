@@ -1,182 +1,832 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'media/favicons/favicon-192x192.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}">
+    <link
+      rel="shortcut icon"
+      href="{% static 'media/favicons/favicon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'media/favicons/favicon-192x192.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
+    />
 
-    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}">
+    <link
+      rel="stylesheet"
+      id="css-main"
+      href="{% static 'css/oneui.min.css' %}"
+    />
 
     <script src="{%static 'js/setTheme.js'%}"></script>
-
-
-</head>
-<body>
+  </head>
+  <body>
     <main id="main-container">
-        <!-- Hero -->
-        <div class="bg-primary-dark">
-          <div class="content content-full text-center pt-7 pb-5">
-            <h1 class="h2 text-white mb-2">
-              FAQs
-            </h1>
-            <h2 class="h4 fw-normal text-white-75">
-              Check out answers to the most common questions.
-            </h2>
-          </div>
+      <!-- Hero -->
+      <div class="bg-primary-dark">
+        <div class="content content-full text-center pt-7 pb-5">
+          <h1 class="h2 text-white mb-2">FAQs</h1>
+          <h2 class="h4 fw-normal text-white-75">
+            Check out answers to the most common questions.
+          </h2>
         </div>
+      </div>
 
-        <!-- Page Content -->
-        <div class="content content-boxed">
-          <!-- Frequently Asked Questions -->
-          <div class="block block-rounded">
-            <div class="block-content block-content-full">
-              <div class="p-sm-4 p-xl-7">
-                <!-- Introduction -->
-                <h2 class="h3"><strong>1.</strong> Introduction</h2>
-                <div id="faq1" class="mb-5" role="tablist" aria-multiselectable="true">
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq1_h1">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq1" href="#faq1_q1" aria-expanded="true" aria-controls="faq1_q1">1. Are there training sessions available for new users ? </a>
-                    </div>
-                    <div id="faq1_q1" class="collapse show" role="tabpanel" aria-labelledby="faq1_h1" data-bs-parent="#faq1">
-                      <div class="block-content">
-                        <p> Yes,we offer comprehensive training sessions for new users.
-                          Additionally,we provide assistance with onboarding employees to
-                          ensure a smooth transition and effective use of our system.
-                         </p>
-                      </div>
-                    </div>
+      <!-- Page Content -->
+      <div class="content content-boxed">
+        <!-- Frequently Asked Questions -->
+        <div class="block block-rounded">
+          <div class="block-content block-content-full">
+            <div class="p-sm-4 p-xl-7">
+              <!-- Introduction -->
+              <h2 class="h3"><strong>1.</strong> Introduction</h2>
+              <div
+                id="faq1"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq1_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq1"
+                      href="#faq1_q1"
+                      aria-expanded="true"
+                      aria-controls="faq1_q1"
+                      >1. Are there training sessions available for new users ?
+                    </a>
                   </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq1_h2">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq1" href="#faq1_q2" aria-expanded="true" aria-controls="faq1_q2">2. How do I schedule a demo with Connect HR ?</a>
-                    </div>
-                    <div id="faq1_q2" class="collapse" role="tabpanel" aria-labelledby="faq1_h2" data-bs-parent="#faq1">
-                      <div class="block-content">
-                        <p><a href="https://www.connecthr.co.za/contact" class="link">Contact</a> our Sales and Customer Care Team: info@connecthr.co.za</p> {% comment %} come back {% endcomment %}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq1_h3">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq1" href="#faq1_q3" aria-expanded="true" aria-controls="faq1_q3">3. Is my data secure?</a>
-                    </div>
-                    <div id="faq1_q3" class="collapse" role="tabpanel" aria-labelledby="faq1_h3" data-bs-parent="#faq1">
-                      <div class="block-content">
-                        <p> Yes, your data is secure. We use encryption, regular security
-                          audits and strict access controls. We also have strong back up and
-                          recovery system. Your security is our top priority</p>
-                      </div>
+                  <div
+                    id="faq1_q1"
+                    class="collapse show"
+                    role="tabpanel"
+                    aria-labelledby="faq1_h1"
+                    data-bs-parent="#faq1"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes,we offer comprehensive training sessions for new
+                        users. Additionally,we provide assistance with
+                        onboarding employees to ensure a smooth transition and
+                        effective use of our system.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <!-- END Introduction -->
-
-                <!-- Functionality -->
-                {% comment %} <h2 class="h3"><strong>2.</strong> Functionality</h2>
-                <div id="faq2" class="mb-5" role="tablist" aria-multiselectable="true">
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq2_h1">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq2" href="#faq2_q1" aria-expanded="true" aria-controls="faq2_q1">What are the key features?</a>
-                    </div>
-                    <div id="faq2_q1" class="collapse" role="tabpanel" aria-labelledby="faq2_h1" data-bs-parent="#faq2">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq1_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq1"
+                      href="#faq1_q2"
+                      aria-expanded="true"
+                      aria-controls="faq1_q2"
+                      >2. How do I schedule a demo with Connect HR ?</a
+                    >
+                  </div>
+                  <div
+                    id="faq1_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq1_h2"
+                    data-bs-parent="#faq1"
+                  >
+                    <div class="block-content">
+                      <p>
+                        <a
+                          href="https://www.connecthr.co.za/contact"
+                          class="link"
+                          >Contact</a
+                        >
+                        our Sales and Customer Care Team: info@connecthr.co.za
+                      </p>
+                      {% comment %} come back {% endcomment %}
                     </div>
                   </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq2_h2">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq2" href="#faq2_q2" aria-expanded="true" aria-controls="faq2_q2">Does your App support mobile devices?</a>
-                    </div>
-                    <div id="faq2_q2" class="collapse" role="tabpanel" aria-labelledby="faq2_h2" data-bs-parent="#faq2">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq1_h3"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq1"
+                      href="#faq1_q3"
+                      aria-expanded="true"
+                      aria-controls="faq1_q3"
+                      >3. Is my data secure?</a
+                    >
+                  </div>
+                  <div
+                    id="faq1_q3"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq1_h3"
+                    data-bs-parent="#faq1"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, your data is secure. We use encryption, regular
+                        security audits and strict access controls. We also have
+                        strong back up and recovery system. Your security is our
+                        top priority
+                      </p>
                     </div>
                   </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq2_h3">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq2" href="#faq2_q3" aria-expanded="true" aria-controls="faq2_q3">Why should I choose your service?</a>
-                    </div>
-                    <div id="faq2_q3" class="collapse" role="tabpanel" aria-labelledby="faq2_h3" data-bs-parent="#faq2">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq2_h4">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq2" href="#faq2_q4" aria-expanded="true" aria-controls="faq2_q4">Is my data secure?</a>
-                    </div>
-                    <div id="faq2_q4" class="collapse" role="tabpanel" aria-labelledby="faq2_h4" data-bs-parent="#faq2">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div> {% endcomment %}
-                <!-- END Functionality -->
-
-                <!-- Payments -->
-                {% comment %} <h2 class="h3"><strong>3.</strong> Payments</h2>
-                <div id="faq3" role="tablist" aria-multiselectable="true">
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq3_h1">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq3" href="#faq3_q1" aria-expanded="true" aria-controls="faq3_q1">Is there any free plan?</a>
-                    </div>
-                    <div id="faq3_q1" class="collapse" role="tabpanel" aria-labelledby="faq3_h1" data-bs-parent="#faq3">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq3_h2">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq3" href="#faq3_q2" aria-expanded="true" aria-controls="faq3_q2">What are the available payment options?</a>
-                    </div>
-                    <div id="faq3_q2" class="collapse" role="tabpanel" aria-labelledby="faq3_h2" data-bs-parent="#faq3">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="block block-rounded block-bordered overflow-hidden mb-1">
-                    <div class="block-header block-header-default" role="tab" id="faq3_h3">
-                      <a class="text-muted" data-bs-toggle="collapse" data-bs-parent="#faq3" href="#faq3_q3" aria-expanded="true" aria-controls="faq3_q3">Can I get a refund?</a>
-                    </div>
-                    <div id="faq3_q3" class="collapse" role="tabpanel" aria-labelledby="faq3_h3" data-bs-parent="#faq3">
-                      <div class="block-content">
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div> {% endcomment %}
-                <!-- END Payments -->
+                </div>
               </div>
+              <!-- END Introduction -->
+
+              <!-- Leave Management -->
+              <h2 class="h3"><strong>2.</strong> Leave Management</h2>
+              <div
+                id="faq4"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq4_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq4"
+                      href="#faq4_q1"
+                      aria-expanded="true"
+                      aria-controls="faq4_q1"
+                      >Can I increase my Team’s monthly Annual Leave Days
+                      increment?</a
+                    >
+                  </div>
+                  <div
+                    id="faq4_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq4_h1"
+                    data-bs-parent="#faq4"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, the basic according to Basic Labor Conditions is
+                        1.25 Days a month. You have an option to increase it to
+                        what meets your business requirements or nature of your
+                        Business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq4_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq4"
+                      href="#faq4_q2"
+                      aria-expanded="true"
+                      aria-controls="faq4_q2"
+                      >Can I cancel an Employee’s Leave that has been approved
+                      already?</a
+                    >
+                  </div>
+                  <div
+                    id="faq4_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq4_h2"
+                    data-bs-parent="#faq4"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, however you must manually increase all the Leave
+                        Days you had deducted.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payroll & Tax -->
+              <h2 class="h3"><strong>3.</strong> Payroll & Tax</h2>
+              <div
+                id="faq5"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq5_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq5"
+                      href="#faq5_q1"
+                      aria-expanded="true"
+                      aria-controls="faq5_q1"
+                      >What Payroll Reports does the Connect HR system
+                      generate?</a
+                    >
+                  </div>
+                  <div
+                    id="faq5_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq5_h1"
+                    data-bs-parent="#faq5"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Connect HR generates ACB, EMP201, EMP501 and IRP5
+                        reports.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq5_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq5"
+                      href="#faq5_q2"
+                      aria-expanded="true"
+                      aria-controls="faq5_q2"
+                      >Can the system generate different pay schedules according
+                      to my business need?</a
+                    >
+                  </div>
+                  <div
+                    id="faq5_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq5_h2"
+                    data-bs-parent="#faq5"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, our systems support weekly, fortnightly, and
+                        monthly payroll schedules. When you set up your Company
+                        Profile you will choose which one will be most
+                        applicable to your business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Expense Manager -->
+              <h2 class="h3"><strong>4.</strong> Expense Manager</h2>
+              <div
+                id="faq6"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq6_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq6"
+                      href="#faq6_q1"
+                      aria-expanded="true"
+                      aria-controls="faq6_q1"
+                      >Who benefits from an Expense Manager feature?</a
+                    >
+                  </div>
+                  <div
+                    id="faq6_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq6_h1"
+                    data-bs-parent="#faq6"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Both employers and employees benefit. Employers save
+                        time on manual processing and gain better visibility
+                        into spending, while employees experience quicker
+                        reimbursements and less hassle with submissions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq6_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq6"
+                      href="#faq6_q2"
+                      aria-expanded="true"
+                      aria-controls="faq6_q2"
+                      >Can employees submit expense claims directly through the
+                      system?</a
+                    >
+                  </div>
+                  <div
+                    id="faq6_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq6_h2"
+                    data-bs-parent="#faq6"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, employees can upload receipts and submit claims
+                        through the software, often using a mobile app or web
+                        interface.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Document Library and Onboarding Processes -->
+              <h2 class="h3">
+                <strong>5.</strong> Document Library and Onboarding Processes
+              </h2>
+              <div
+                id="faq7"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq7_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq7"
+                      href="#faq7_q1"
+                      aria-expanded="true"
+                      aria-controls="faq7_q1"
+                      >How easy is it to use the platform?</a
+                    >
+                  </div>
+                  <div
+                    id="faq7_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq7_h1"
+                    data-bs-parent="#faq7"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Our platform is designed to be intuitive and user-friendly, with a simple interface and easy navigation to ensure that you can get started quickly and effortlessly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq7_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq7"
+                      href="#faq7_q2"
+                      aria-expanded="true"
+                      aria-controls="faq7_q2"
+                      >Are there training sessions available for new users?</a
+                    >
+                  </div>
+                  <div
+                    id="faq7_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq7_h2"
+                    data-bs-parent="#faq7"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Yes, we offer comprehensive training sessions for new
+                        users. Additionally, we provide assistance with
+                        onboarding employees to ensure a smooth transition and
+                        effective use of our system.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% comment %}
+              <!-- Functionality -->
+              <h2 class="h3"><strong>2.</strong> Functionality</h2>
+              <div
+                id="faq2"
+                class="mb-5"
+                role="tablist"
+                aria-multiselectable="true"
+              >
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq2_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq2"
+                      href="#faq2_q1"
+                      aria-expanded="true"
+                      aria-controls="faq2_q1"
+                      >What are the key features?</a
+                    >
+                  </div>
+                  <div
+                    id="faq2_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq2_h1"
+                    data-bs-parent="#faq2"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq2_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq2"
+                      href="#faq2_q2"
+                      aria-expanded="true"
+                      aria-controls="faq2_q2"
+                      >Does your App support mobile devices?</a
+                    >
+                  </div>
+                  <div
+                    id="faq2_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq2_h2"
+                    data-bs-parent="#faq2"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq2_h3"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq2"
+                      href="#faq2_q3"
+                      aria-expanded="true"
+                      aria-controls="faq2_q3"
+                      >Why should I choose your service?</a
+                    >
+                  </div>
+                  <div
+                    id="faq2_q3"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq2_h3"
+                    data-bs-parent="#faq2"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq2_h4"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq2"
+                      href="#faq2_q4"
+                      aria-expanded="true"
+                      aria-controls="faq2_q4"
+                      >Is my data secure?</a
+                    >
+                  </div>
+                  <div
+                    id="faq2_q4"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq2_h4"
+                    data-bs-parent="#faq2"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END Functionality -->
+
+              <!-- Payments -->
+              <h2 class="h3"><strong>3.</strong> Payments</h2>
+              <div id="faq3" role="tablist" aria-multiselectable="true">
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq3_h1"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq3"
+                      href="#faq3_q1"
+                      aria-expanded="true"
+                      aria-controls="faq3_q1"
+                      >Is there any free plan?</a
+                    >
+                  </div>
+                  <div
+                    id="faq3_q1"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq3_h1"
+                    data-bs-parent="#faq3"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq3_h2"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq3"
+                      href="#faq3_q2"
+                      aria-expanded="true"
+                      aria-controls="faq3_q2"
+                      >What are the available payment options?</a
+                    >
+                  </div>
+                  <div
+                    id="faq3_q2"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq3_h2"
+                    data-bs-parent="#faq3"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="block block-rounded block-bordered overflow-hidden mb-1"
+                >
+                  <div
+                    class="block-header block-header-default"
+                    role="tab"
+                    id="faq3_h3"
+                  >
+                    <a
+                      class="text-muted"
+                      data-bs-toggle="collapse"
+                      data-bs-parent="#faq3"
+                      href="#faq3_q3"
+                      aria-expanded="true"
+                      aria-controls="faq3_q3"
+                      >Can I get a refund?</a
+                    >
+                  </div>
+                  <div
+                    id="faq3_q3"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="faq3_h3"
+                    data-bs-parent="#faq3"
+                  >
+                    <div class="block-content">
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                      <p>
+                        Dolor posuere proin blandit accumsan senectus netus
+                        nullam curae, ornare laoreet adipiscing luctus mauris
+                        adipiscing pretium eget fermentum, tristique lobortis
+                        est ut metus lobortis tortor tincidunt himenaeos
+                        habitant quis dictumst proin odio sagittis purus mi, nec
+                        taciti vestibulum quis in sit varius lorem sit metus mi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END Payments -->
             </div>
           </div>
-          <!-- END Frequently Asked Questions -->
         </div>
-        <!-- END Page Content -->
-      </main>
-      <script src="{% static 'js/oneui.app.min.js' %}"></script>
-</body>
+        <!-- END Frequently Asked Questions -->
+      </div>
+      {% endcomment %}
+      <!-- END Page Content -->
+    </main>
+    <script src="{% static 'js/oneui.app.min.js' %}"></script>
+  </body>
 </html>
 {% endblock %}
