@@ -19,7 +19,8 @@
 {% endblock %} {% block content %}
 <!-- Masthead header -->
 
-{% comment %} <hr
+{% comment %}
+<hr
   style="
     border: 0;
     height: 5px;
@@ -27,8 +28,8 @@
     margin-top: 0;
     margin-bottom: 0;
   "
-/> {% endcomment %}
-{% comment %}
+/>
+{% endcomment %} {% comment %}
 <hr
   style="
     border: 0;
@@ -127,85 +128,159 @@
 
     <!-- Partner Logos Container with Border and White Background -->
     <div class="partner-logos-container border border-white bg-white py-4 px-3">
-      <div class="row justify-content-center">
-        <!-- First Row of Logos (5 logos) -->
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/Adonai.png' %}"
-            alt="Adonai"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/BA.png' %}"
-            alt="Brooklyn Aesthetics"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/EB.png' %}"
-            alt="Exclusive Books"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/EE.png' %}"
-            alt="Easy Equities"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/Mapunyane.png' %}"
-            alt="Mapunyane"
-            class="img-fluid"
-          />
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <!-- Second Row of Logos (5 logos) -->
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/Mulax.png' %}"
-            alt="Mulax"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/MyDough.png' %}"
-            alt="MyDough"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/Purcee.png' %}"
-            alt="Purcee Industrial Africa"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/Telkom.png' %}"
-            alt="Telkom"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-2 col-sm-3 mb-4">
-          <img
-            src="{% static 'media/photos/VHG.png' %}"
-            alt="VHG Consulting"
-            class="img-fluid"
-          />
+      <!-- Create a scrolling wrapper for the logos -->
+      <div class="marquee-wrapper">
+        <div class="partner-logos">
+          <!-- Logos will repeat immediately by duplicating the content -->
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Adonai.png' %}"
+              alt="Adonai"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/BA.png' %}"
+              alt="Brooklyn Aesthetics"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/EB.png' %}"
+              alt="Exclusive Books"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/EE.png' %}"
+              alt="Easy Equities"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Mapunyane.png' %}"
+              alt="Mapunyane"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Mulax.png' %}"
+              alt="Mulax"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/MyDough.png' %}"
+              alt="MyDough"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Purcee.png' %}"
+              alt="Purcee Industrial Africa"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Telkom.png' %}"
+              alt="Telkom"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/VHG.png' %}"
+              alt="VHG Consulting"
+              class="img-fluid"
+            />
+          </div>
+
+          <!-- Duplicate the logos to make the scroll seamless -->
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Adonai.png' %}"
+              alt="Adonai"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/BA.png' %}"
+              alt="Brooklyn Aesthetics"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/EB.png' %}"
+              alt="Exclusive Books"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/EE.png' %}"
+              alt="Easy Equities"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Mapunyane.png' %}"
+              alt="Mapunyane"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Mulax.png' %}"
+              alt="Mulax"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/MyDough.png' %}"
+              alt="MyDough"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Purcee.png' %}"
+              alt="Purcee Industrial Africa"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/Telkom.png' %}"
+              alt="Telkom"
+              class="img-fluid"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="{% static 'media/photos/VHG.png' %}"
+              alt="VHG Consulting"
+              class="img-fluid"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Add the CSS for Continuous Marquee effect -->
 
 {% block extra_css %}
 <!-- External Font -->
@@ -457,5 +532,37 @@
         margin-bottom: 20px;
       }
     }
+
+
+
+      .marquee-wrapper {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .partner-logos {
+        display: flex;
+        animation: scroll-left 20s linear infinite;
+      }
+
+      .logo-item {
+        flex: 0 0 auto;
+        margin-right: 30px; /* space between logos */
+      }
+
+      .logo-item img {
+        max-height: 60px; /* Adjust the height of the logos as needed */
+        object-fit: contain;
+      }
+
+      /* Keyframes for Continuous Scroll with Wrapping Effect */
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%); /* Scroll the content until half of it disappears */
+        }
+      }
 </style>
 {% endblock %}
