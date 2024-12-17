@@ -35,14 +35,10 @@
       .pricing-card {
         max-width: 250px; /* Restrict width of cards */
         margin: 0 auto; /* Center cards horizontally */
-        
       }
-
-      
 
       .block-content .price {
         font-size: 2rem; /* Make price font smaller for smaller cards */
-        
       }
 
       .block-content h6 {
@@ -132,46 +128,130 @@
         color: #6a1b9a !important; /* Purple text */
       }
 
+      <style>
+        /* Hover effect */
+        .btn:hover {
+          background-color: #d4428b !important;
+          color: white !important;
+          border-color: #d4428b !important;
+        }
+      
+        /* Active button state */
+        .btn.active {
+          background-color: #d4428b !important;
+          color: white !important;
+          border-color: #d4428b !important;
+        }
+      
+        /* Default state for buttons */
+        .btn {
+          background-color: white !important;
+          color: #d4428b !important;
+          border: 2px solid #d4428b;
+          border-radius: 50px;
+          padding: 10px 20px;
+        }
+      
+        /* Optional: Style the buttons' appearance when hovered over or active */
+        .btn:not(.active):hover {
+          background-color: #d4428b !important;
+          color: white !important;
+          border-color: #d4428b !important;
+        }
+      </style>
       
     </style>
   </head>
   <body>
     <div class="content">
-      <div class="text-center" style="display: flex; justify-content: center; align-items: center; height: 100%;">
-        <h2 class="content-heading-center" style="color:#fff; border: 3px solid #73408b; background-color:#73408b; padding: 10px 50px;
-            border-radius: 50px;" >Pricing Plans</h2>
-    </div>
-    
+      <div
+        class="text-center"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        "
+      >
+        <h2
+          class="content-heading-center"
+          style="
+            color: #fff;
+            border: 3px solid #73408b;
+            background-color: #73408b;
+            padding: 10px 50px;
+            border-radius: 50px; font-size:1rem;
+          "
+        >
+          Pricing & Plans
+        </h2>
+      </div>
 
       <div class="py-3 text-center">
-        <h1 class="h2 fw-bold mt-3 mb-2">
+        <h1 class="h1 fw-bold mt-3 mb-2">
           We have exclusive plans just for you!
         </h1>
       </div>
 
       <!-- Toggle Buttons for Monthly / Yearly -->
-      <div class="mb-4 text-center">
-        <button
-          id="monthlyBtn"
-          class="btn  mx-2" style="background-color:#d4428b; color:#fff;"
-          onclick="togglePricing('monthly')"
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: auto;
+        "
+      >
+        <div
+          class="mb-4 text-center"
+          style="
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            border: 3px solid #d4428b;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 10px;
+          "
         >
-          Monthly Subscriptions
-        </button>
+          <button
+            id="monthlyBtn"
+            class="btn mx-2 pricing-btn"
+            style="
+              background-color: #fff;
+              color: #d4428b;
+              border: none;
+              border-radius: 50px;
+              padding: 10px 20px;
+            "
+            onclick="togglePricing('monthly')"
+          >
+            Monthly Subscriptions
+          </button>
 
-        <button
-          id="yearlyBtn"
-          class="btn mx-2" style="background-color:#d4428b; color:#fff;"
-          onclick="togglePricing('yearly')"
-        >
-          Yearly
-        </button>
+          <button
+            id="yearlyBtn"
+            class="btn mx-2 pricing-btn"
+            style="
+              background-color: #fff;
+              color: #d4428b;
+              border: none;
+              border-radius: 50px;
+              padding: 10px 20px;
+            "
+            onclick="togglePricing('yearly')"
+          >
+            Yearly
+          </button>
+        </div>
       </div>
 
       <div class="row justify-content-center mb-4">
         <div class="col-md-10 col-xl-6">
           <div
-            class="input-group input-group-lg border border-purple p-3 rounded-3 mb-2 d-flex justify-content-center align-items-center"
+            class="input-group input-group-lg border border-pink p-2 rounded-3 mb-2 d-flex justify-content-center align-items-center"
           >
             <span class="text-purple font-weight-bold"
               >ANNUAL BASE FEE R828 (ONCE-OFF)</span
@@ -194,10 +274,13 @@
             <div class="block-header">
               <h3 class="block-title">Starter Plan</h3>
             </div>
-            <div class="block-content" style="background-color: #73408b; color:#fff;">
+            <div
+              class="block-content"
+              style="background-color: #73408b; color: #fff"
+            >
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R28.75</p>
-                <p class="h6 ">per month</p>
+                <p class="h6">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -205,8 +288,15 @@
                 <p><strong>1-5</strong> Employees</p>
               </div>
             </div>
-            <div class="block-content block-content-full" style="background-color:#73408b;">
-              <span class="btn px-4" style="background-color:#fff; color:black;">Get Started</span>
+            <div
+              class="block-content block-content-full"
+              style="background-color: #73408b"
+            >
+              <span
+                class="btn px-4"
+                style="background-color: #fff; color: black"
+                >Get Started</span
+              >
             </div>
           </a>
         </div>
@@ -224,10 +314,13 @@
             <div class="block-header">
               <h3 class="block-title">Growth Plan</h3>
             </div>
-            <div class="block-content" style="background-color: #73408b; color:#fff;">
+            <div
+              class="block-content"
+              style="background-color: #73408b; color: #fff"
+            >
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R26.45</p>
-                <p class="h6 ">per month</p>
+                <p class="h6">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -235,8 +328,15 @@
                 <p><strong>6-10</strong> Employees</p>
               </div>
             </div>
-            <div class="block-content block-content-full" style="background-color:#73408b;">
-              <span class="btn px-4" style="background-color:#fff; color:black;">Get Started</span>
+            <div
+              class="block-content block-content-full"
+              style="background-color: #73408b"
+            >
+              <span
+                class="btn px-4"
+                style="background-color: #fff; color: black"
+                >Get Started</span
+              >
             </div>
           </a>
         </div>
@@ -254,10 +354,13 @@
             <div class="block-header">
               <h3 class="block-title">Small Business</h3>
             </div>
-            <div class="block-content" style="background-color: #73408b; color:#fff;">
+            <div
+              class="block-content"
+              style="background-color: #73408b; color: #fff"
+            >
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R24.75</p>
-                <p class="h6 ">per month</p>
+                <p class="h6">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -265,8 +368,15 @@
                 <p><strong>11-50</strong> Employees</p>
               </div>
             </div>
-            <div class="block-content block-content-full" style="background-color:#73408b;">
-              <span class="btn px-4" style="background-color:#fff; color:black;">Get Started</span>
+            <div
+              class="block-content block-content-full"
+              style="background-color: #73408b"
+            >
+              <span
+                class="btn px-4"
+                style="background-color: #fff; color: black"
+                >Get Started</span
+              >
             </div>
           </a>
         </div>
@@ -284,10 +394,13 @@
             <div class="block-header">
               <h3 class="block-title">Corporate</h3>
             </div>
-            <div class="block-content" style="background-color: #73408b; color:#fff;">
+            <div
+              class="block-content"
+              style="background-color: #73408b; color: #fff"
+            >
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R23.00</p>
-                <p class="h6 ">per month</p>
+                <p class="h6">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -295,8 +408,15 @@
                 <p><strong>101-200</strong> Employees</p>
               </div>
             </div>
-            <div class="block-content block-content-full" style="background-color:#73408b;">
-              <span class="btn px-4" style="background-color:#fff; color:black;">Get Started</span>
+            <div
+              class="block-content block-content-full"
+              style="background-color: #73408b"
+            >
+              <span
+                class="btn px-4"
+                style="background-color: #fff; color: black"
+                >Get Started</span
+              >
             </div>
           </a>
         </div>
@@ -314,7 +434,10 @@
             <div class="block-header">
               <h3 class="block-title">Custom</h3>
             </div>
-            <div class="block-content" style="background-color: #73408b; color:#fff;">
+            <div
+              class="block-content"
+              style="background-color: #73408b; color: #fff"
+            >
               <div
                 class="py-2 d-flex justify-content-center align-items-center"
               >
@@ -326,8 +449,15 @@
                 <p>More than 200 Employees</p>
               </div>
             </div>
-            <div class="block-content block-content-full" style="background-color:#73408b;">
-              <span class="btn px-4" style="background-color:#fff; color:black;">Get Started</span>
+            <div
+              class="block-content block-content-full"
+              style="background-color: #73408b"
+            >
+              <span
+                class="btn px-4"
+                style="background-color: #fff; color: black"
+                >Get Started</span
+              >
             </div>
           </a>
         </div>
@@ -373,14 +503,19 @@
         }
 
         // Toggle button styles
-        document.getElementById("monthlyBtn").classList.toggle("btn-primary");
-        document
-          .getElementById("monthlyBtn")
-          .classList.toggle("btn-outline-secondary");
-        document.getElementById("yearlyBtn").classList.toggle("btn-primary");
-        document
-          .getElementById("yearlyBtn")
-          .classList.toggle("btn-outline-secondary");
+        const monthlyBtn = document.getElementById("monthlyBtn");
+        const yearlyBtn = document.getElementById("yearlyBtn");
+
+        // Remove 'active' class from both buttons
+        monthlyBtn.classList.remove("active");
+        yearlyBtn.classList.remove("active");
+
+        // Add 'active' class to the selected button
+        if (planType === "monthly") {
+          monthlyBtn.classList.add("active");
+        } else if (planType === "yearly") {
+          yearlyBtn.classList.add("active");
+        }
       }
     </script>
   </body>
