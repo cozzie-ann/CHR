@@ -40,7 +40,6 @@
 
     <!-- Scripts -->
     <script src="{% static 'js/setTheme.js' %}"></script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- Popper.js (required for Bootstrap 4) -->
@@ -50,11 +49,76 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
+      .navbar {
+        height: 100px; /* Set a fixed height for the navbar */
+        line-height: 70px; /* Vertically center content in navbar */
+      }
+
+      /* Ensure the logo scales properly without affecting navbar */
       .navbar-logo {
-        width: 180px; /* Adjust this value to make the logo bigger */
-        height: 60px; /* Keep aspect ratio intact */
+        max-width: 100%; /* Ensure logo width doesn't exceed its container */
+        max-height: 120px; /* Ensure logo doesn't exceed a reasonable height */
+        height: auto; /* Maintain aspect ratio */
+        width: auto; /* Keep width proportional */
+        object-fit: contain; /* Ensure logo scales without distortion */
+        /* Slight margin to vertically center it */
+      }
+
+      /* Mobile-first responsive navbar */
+      .navbar-nav .nav-item {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      /* Update footer text color for better contrast */
+      #page-footer {
+        background: linear-gradient(135deg, #9d4bcb, #bd406b);
+        color: white;
+      }
+
+      .footer-content a {
+        color: white;
+      }
+
+      .footer-content a:hover {
+        color: #d6c2ea;
+      }
+
+      /* Adjust modal styles */
+      .modal-header {
+        background-color: #73408b;
+        color: white;
+      }
+
+      .modal-body {
+        background-color: #73408b;
+      }
+
+      .btn-primary {
+        background-color: #5e2c75;
+        border-color: #5e2c75;
+      }
+
+      /* For smooth scroll effect */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Make sure the navbar stays on top */
+      .navbar {
+        z-index: 1000;
+      }
+
+      .navbar .nav-link {
+        color: #73408b !important; /* Purple color */
+      }
+
+      /* Hover effect to lighten the purple */
+      .navbar .nav-link:hover {
+        color: #9b4f98 !important; /* Lighter shade of purple */
       }
     </style>
+
     <script>
       // Ensure the year copy in the footer works
       document.addEventListener("DOMContentLoaded", function () {
@@ -73,7 +137,7 @@
       id="mainNav"
       style="background: white; color: #73408b"
     >
-      <div class="container px-5">
+      <div class="container">
         <a class="navbar-brand" href="{% url 'pricing:home' %}">
           <img
             src="{% static 'media/photos/3 (1).png' %}"
@@ -96,64 +160,36 @@
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a
-                class="nav-link me-lg-3"
-                href="{% url 'pricing:home' %}"
-                style="color: #73408b"
-                >Home</a
-              >
+              <a class="nav-link" href="{% url 'pricing:home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link me-lg-3"
-                href="{% url 'pricing:about' %}"
-                style="color: #73408b"
-                >About Us</a
-              >
+              <a class="nav-link" href="{% url 'pricing:about' %}">About Us</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link me-lg-3"
-                href="{% url 'pricing:services' %}"
-                style="color: #73408b"
+              <a class="nav-link" href="{% url 'pricing:services' %}"
                 >Services</a
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link me-lg-3"
-                href="{% url 'pricing:pricing' %}"
-                style="color: #73408b"
-                >Pricing</a
-              >
+              <a class="nav-link" href="{% url 'pricing:pricing' %}">Pricing</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link me-lg-3"
-                href="{% url 'pricing:faq' %}"
-                style="color: #73408b"
-                >FAQs</a
-              >
+              <a class="nav-link" href="{% url 'pricing:faq' %}">FAQs</a>
             </li>
           </ul>
           <button
             class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
-            style="background-color: #73408b; color: white"
             data-bs-toggle="modal"
             data-bs-target="#feedbackModal"
           >
-            <span class="d-flex align-items-center">
-              <i class="bi-chat-text-fill me-2"></i>
-              <span class="small">Contact Us</span>
-            </span>
+            <i class="bi-chat-text-fill me-2"></i> Contact Us
           </button>
         </div>
       </div>
     </nav>
 
-    <!-- The <hr> is now directly below the navbar without any margin above it -->
     <hr
       style="
         border: 0;
@@ -174,41 +210,30 @@
     />
 
     <!-- Page Content -->
-    <main class="flex-fill">
-      {% block content %}
-      <!-- This is where content from child templates will be injected -->
-      {% endblock %}
-    </main>
+    <main class="flex-fill">{% block content %}{% endblock %}</main>
 
     <!-- Footer -->
-    <footer
-      id="page-footer"
-      class="bg-[#FB5618] text-white"
-      style="background: linear-gradient(135deg, #9d4bcb, #bd406b)"
-    >
-      <div class="content py-3">
+    <footer id="page-footer" class="py-3">
+      <div class="container">
         <div class="row fs-sm">
-          <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end">
-            Crafted with <i class="fa fa-heart text-danger"></i> by
-            <a class="fw-semibold" href="https://pixelcave.com" target="_blank"
-              >pixelcave</a
-            >
-          </div>
-          <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
+          <div class="col-sm-6 text-center text-sm-start">
             <a
               class="fw-semibold"
               href="{% url 'pricing:home' %}"
-              target="_blank"
               style="color: white"
               >Connect HR</a
             >
             &copy; <span data-toggle="year-copy"></span>
           </div>
+          <div class="col-sm-6 text-center text-sm-end">
+            Crafted with <i class="fa fa-heart text-danger"></i> by
+            <a href="https://pixelcave.com" target="_blank">pixelcave</a>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- Feedback Modal (Globally Accessible) -->
+    <!-- Feedback Modal -->
     <div
       class="modal fade"
       id="feedbackModal"
@@ -218,27 +243,19 @@
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <!-- Modal Header with custom background color -->
-          <div
-            class="modal-header"
-            style="background-color: #73408b; color: white"
-          >
-            <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">
-              Contact Us
-            </h5>
+          <!-- Modal Header -->
+          <div class="modal-header" style="background-color: #73408b">
+            <h5 class="modal-title" id="feedbackModalLabel">Contact Us</h5>
             <button
-              class="btn-close btn-close-white"
+              class="btn-close"
               type="button"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
 
-          <!-- Modal Body with the same background color -->
-          <div
-            class="modal-body border-0 p-4"
-            style="background-color: #73408b"
-          >
+          <!-- Modal Body -->
+          <div class="modal-body" style="background-color: #73408b">
             <form
               id="contactForm"
               action="https://api.web3forms.com/submit"
@@ -249,8 +266,8 @@
                   class="form-control"
                   id="name"
                   type="text"
-                  placeholder="Enter your name..."
                   name="name"
+                  placeholder="Enter your name..."
                   required
                 />
                 <label for="name" style="color: #73408b">Company Name</label>
@@ -260,8 +277,8 @@
                   class="form-control"
                   id="contact-person"
                   type="text"
-                  placeholder="Enter contact person's name..."
                   name="contact_person"
+                  placeholder="Enter contact person's name..."
                   required
                 />
                 <label for="contact-person" style="color: #73408b"
@@ -273,8 +290,8 @@
                   class="form-control"
                   id="email"
                   type="email"
-                  placeholder="name@example.com"
                   name="email"
+                  placeholder="name@example.com"
                   required
                 />
                 <label for="email" style="color: #73408b">Email</label>
@@ -283,20 +300,15 @@
                 <textarea
                   class="form-control"
                   id="message"
+                  name="message"
                   placeholder="Enter your message..."
                   style="height: 10rem"
-                  name="message"
                   required
                 ></textarea>
                 <label for="message" style="color: #73408b">Message</label>
               </div>
               <div class="d-grid">
-                <button
-                  class="btn btn-primary btn-lg"
-                  id="submitButton"
-                  type="submit"
-                  style="background-color: #5e2c75; border-color: #5e2c75"
-                >
+                <button class="btn btn-primary btn-lg" type="submit">
                   Submit
                 </button>
               </div>
@@ -313,13 +325,8 @@
     </div>
 
     <!-- Bootstrap JS & Popper.js (via CDN) -->
-    <!-- jQuery (required for Bootstrap 4) -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <!-- Popper.js (required for Bootstrap 4) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-
-    <!-- Bootstrap JS (required for Navbar toggling) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -1,21 +1,52 @@
-{% extends "base.html" %}
-{% load static %}
-{% block extra_head %}
+{% extends "base.html" %} {% load static %} {% block extra_head %}
 <!-- Specific CSS for home page -->
-
 <!-- Include the main styles.css for shared styles across the site -->
 <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-{% endblock %}
-
-{% block content %}
+<link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="{% static 'media/favicons/favicon-192x192.png' %}"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
+/>
+<link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}" />
+<script src="{% static 'js/setTheme.js' %}"></script>
+{% endblock %} {% block content %}
 <!-- Masthead header -->
+
+<hr
+style="
+  border: 0;
+  height: 5px;
+  background-color: #3d0059;
+  margin-top: 0;
+  margin-bottom: 0;
+"
+/>
+<hr
+style="
+  border: 0;
+  height: 5px;
+  background-color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+"
+/>
+
 <header class="masthead" id="home">
   <div class="container px-5">
     <div class="row gx-5 align-items-center">
       <!-- Left Side with Text -->
-      <div class="col-lg-6 text-center text-lg-start">
+      <div class="col-12 col-lg-6 text-center text-lg-start">
         <div class="mb-5 mb-lg-0">
-          <h1 class="display-1 lh-1 mb-3" style="font-weight: bold;">Seamless HR Solutions for the Everyday Company.</h1>
+          <h1 class="display-1 lh-1 mb-3 font-weight-bold text-white">
+            Seamless HR Solutions for the everyday company
+          </h1>
           <p class="lead fw-normal text-muted mb-5 bordered-text">
             HR solutions specifically for SMMEs and frontline employees.
           </p>
@@ -23,76 +54,348 @@
       </div>
 
       <!-- Right Side with Laptop Image -->
-      <div class="col-lg-6 text-center">
+      <div class="col-12 col-lg-6 text-center">
         <div class="masthead-device-mockup">
-          <img src="{% static 'media/photos/laptop.png' %}" class="laptop-image img-fluid" alt="Laptop" />
+          <img
+            src="{% static 'media/photos/laptop.png' %}"
+            class="laptop-image img-fluid"
+            alt="Laptop"
+          />
         </div>
       </div>
     </div>
   </div>
 </header>
 
-</body>
+<!-- Section: Statistics -->
+<section class="statistics-section py-5">
+  <div class="container">
+    <!-- Title: Statistics -->
+    <h1 class="text-center mb-4 text-white">Statistics</h1>
 
+    <!-- Centered Text Div -->
+    <div class="text-center">
+      <p class="lead text-white">
+        Here are some key statistics highlighting our achievements and growth in
+        2024:
+      </p>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+      <!-- Statistics Cards -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-4">
+          <div
+            class="statistics-card p-4 border border-primary rounded shadow-sm"
+          >
+            <h2 id="stat1" class="statistics-title mb-3">0</h2>
+            <p class="statistics-description">Payslips generated in 2024.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div
+            class="statistics-card p-4 border border-primary rounded shadow-sm"
+          >
+            <h2 id="stat2" class="statistics-title mb-3">0</h2>
+            <p class="statistics-description">Employees onboarded in 2024.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div
+            class="statistics-card p-4 border border-primary rounded shadow-sm"
+          >
+            <h2 id="stat3" class="statistics-title mb-3">0</h2>
+            <p class="statistics-description">
+              Leave Days Accumulated in 2024.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Partners -->
+<section class="bg-body-light py-5">
+  <div class="container">
+    <!-- Partner Logos Section Heading with border -->
+    <div class="py-3 text-center border-section">
+      <h2 class="h1 mb-0">Our Strategic Partners and Clients</h2>
+    </div>
+
+    <!-- Partner Logos Container with Border and White Background -->
+    <div class="partner-logos-container border border-white bg-white py-4 px-3">
+      <div class="row justify-content-center">
+        <!-- First Row of Logos (5 logos) -->
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/Adonai.png' %}" alt="Partner 1" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/BA.png' %}" alt="Partner 2" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/EB.png' %}" alt="Partner 3" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/EE.png' %}" alt="Partner 4" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/Mapunyane.png' %}" alt="Partner 5" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Second Row of Logos (5 logos) -->
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/Mulax.png' %}" alt="Partner 6" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/MyDough.png' %}" alt="Partner 7" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/Purcee.png' %}" alt="Partner 8" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/Telkom.png' %}" alt="Partner 9" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-3 mb-4">
+          <img src="{% static 'media/photos/VHG.png' %}" alt="Partner 10" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block extra_css %}
+<!-- External Font -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+  rel="stylesheet"
+/>
+{% endblock %} {% block extra_scripts %}
+<!-- JavaScript to animate numbers -->
+<script>
+  // Function to animate numbers from 0 to target value
+  function animateNumber(elementId, targetValue) {
+    let current = 0; // Initial value
+    const increment = targetValue / 100; // Adjust the increment for smoother animation
+    const element = document.getElementById(elementId);
+
+    // Function to update the number
+    function updateNumber() {
+      if (current < targetValue) {
+        current += increment;
+        element.textContent = Math.ceil(current); // Round up the number
+        requestAnimationFrame(updateNumber); // Continue updating the number
+      } else {
+        element.textContent = targetValue + "+"; // Append the '+' sign when animation ends
+      }
+    }
+
+    // Start the animation
+    updateNumber();
+  }
+
+  // Wait for the DOM to be fully loaded before starting the animation
+  document.addEventListener("DOMContentLoaded", function () {
+    animateNumber("stat1", 5500); // Number 1: 5500
+    animateNumber("stat2", 11553); // Number 2: 11553
+    animateNumber("stat3", 1500); // Number 3: 1500
+  });
+</script>
+{% endblock %}
 
 <style>
-  /* Background image for masthead */
+  /* Apply background image to the entire body */
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure body takes full height of the page */
+    background: url('{% static "media/photos/bg.jpg" %}') no-repeat center
+      center fixed;
+    background-size: cover; /* Ensures the image covers the entire page */
+    font-family: "Montserrat", sans-serif; /* Consistent font across the page */
+  }
+
+  /* Ensure the body takes up the entire height */
+  html,
+  body {
+    height: 100%;
+  }
+
+  /* Masthead section */
   .masthead {
     position: relative;
-    background-image: url('{% static "media/photos/bg.jpg" %}'); /* Replace with your background image */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    z-index: 1; /* Ensure content is above background */
+    height: 100vh; /* Full height of viewport */
+    background: none; /* Remove background from masthead as it's on the body */
   }
 
-  /* Apply the Montserrat font to all elements within the masthead */
+  /* Styling for masthead text */
   .masthead h1,
   .masthead p {
-    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    color: white; /* White text for contrast */
   }
 
-  /* Make the laptop image centered in its div */
-  .masthead-device-mockup {
+  /* Container within masthead */
+  .masthead .container {
     position: relative;
-    width: 100%;
-    max-width: 500px; /* Set a max width for the image */
-    margin: 0 auto; /* Centering the image */
+    z-index: 2;
   }
 
-  /* Laptop image settings */
   .laptop-image {
     width: 100%;
     height: auto;
     object-fit: contain;
-    transform: scale(1.85);
-  }
-
-  /* Styling for text to be above the background */
-  .masthead .container {
-    position: relative;
-    z-index: 1; /* Ensure text stays above the background */
-  }
-
-  .masthead h1,
-  .masthead p {
-    color: white; /* Set text color to white for better contrast */
+    transform: scale(2.3);
   }
 
   /* Bordered Text */
   .bordered-text {
-    border: 1px solid #C8415D; /* Thinner border with the desired color */
-    padding: 10px; /* Keep the existing padding */
-    border-radius: 15px; /* Rounded corners */
-    color: #C8415D !important; /* Ensure text color is applied with !important */
-    background-color: white; /* Light background to contrast text */
-    display: inline-block; /* Make the container adjust to the width of the text */
+    border: 1px solid #c8415d;
+    padding: 10px;
+    border-radius: 15px;
+    color: #c8415d !important;
+    background-color: white;
+    display: inline-block;
     white-space: nowrap;
     font-size: 1rem;
   }
-    
-</style>
 
+  /* Ensure content stays above the background */
+  .main-content {
+    position: relative;
+    z-index: 2; /* Ensure content stays above background */
+    padding: 40px 20px;
+  }
+
+  /* Styling for the Statistics Section */
+  .statistics-section {
+    background-color: #73408b;
+    padding: 60px 0;
+  }
+
+  .statistics-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .statistics-section p {
+    font-size: 1.125rem;
+    color: #9d4bcb;
+  }
+
+  .statistics-card {
+    background-color: white;
+    border: 1px solid #c8415d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .statistics-title {
+    font-size: 2.5rem;
+    color: #9d4bcb;
+    font-weight: bold;
+  }
+
+  .statistics-description {
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 400;
+  }
+
+  .statistics-card + .statistics-card {
+    margin-top: 20px;
+  }
+
+  /* Styling for Partner Logos Section */
+  .bg-body-light {
+    background-color: #f8f9fa;
+  }
+
+  /* Styling for Partner Logos Section */
+  .partner-logos-container {
+    border: 2px solid #73408b; /* Purple Border */
+    background-color: #ffffff; /* White Background */
+    padding: 20px;
+    border-radius: 25px;
+    box-sizing: border-box; /* Ensure padding doesn't affect the border */
+  }
+
+  .partner-logos-container .col-md-2 {
+    display: flex;
+    justify-content: center; /* Center logos horizontally */
+    align-items: center; /* Align logos vertically */
+  }
+  
+  /* Ensure logos are responsive */
+  .partner-logos-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  }
+  
+  /* Additional margin to ensure some space between rows */
+  .partner-logos-container .row {
+    margin-bottom: 20px;
+  }
+
+  .partner-logos-container .col-md-2,
+  .partner-logos-container .col-sm-3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Ensuring that the border is not being overridden by any other global settings */
+  .partner-logos-container {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #73408b;
+  }
+
+  .bg-body-light h2 {
+    color: white;
+  }
+
+  /* Additional specificity for border */
+  .bg-body-light .partner-logos-container {
+    border: 5px solid #73408b !important;
+  }
+
+  /* Border styling for the section with the heading */
+  .border-section {
+    border: 2px solid #73408b; /* Purple border color */
+    background-color:#73408b;
+    padding: 20px;
+    border-radius: 75px; /* Rounded corners */
+    text-align: center; /* Center content */
+    margin-bottom: 30px;
+    color:white;
+  }
+
+  .col-md-2 .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    .statistics-section .row {
+      text-align: center;
+    }
+
+    .statistics-section .col-md-4 {
+      margin-bottom: 20px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .col-md-2 {
+      flex: 1 0 45%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
 {% endblock %}

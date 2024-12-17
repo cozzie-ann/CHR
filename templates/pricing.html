@@ -153,7 +153,7 @@
         >
           Monthly Subscriptions
         </button>
-        {% comment %}
+        
         <button
           id="yearlyBtn"
           class="btn btn-outline-secondary mx-2"
@@ -161,7 +161,7 @@
         >
           Yearly
         </button>
-        {% endcomment %}
+        
       </div>
 
       <div class="row justify-content-center mb-4">
@@ -321,31 +321,28 @@
       function togglePricing(planType) {
         // Select all pricing cards
         const cards = document.querySelectorAll(".pricing-card");
-
+      
         cards.forEach((card) => {
           const monthlyPrice = card.getAttribute("data-monthly-price");
           const yearlyPrice = card.getAttribute("data-yearly-price");
-
+      
           // Skip the custom plan card
-          if (
-            monthlyPrice === "Special Request" ||
-            yearlyPrice === "Special Request"
-          ) {
+          if (monthlyPrice === "Special Request" || yearlyPrice === "Special Request") {
             return; // Skip this card
           }
-
+      
           const priceElement = card.querySelector(".price");
-
+      
           // Show monthly or yearly based on the selected plan
           if (planType === "monthly") {
-            priceElement.textContent = R${monthlyPrice};
+            priceElement.textContent = `R${monthlyPrice}`;  // Corrected string interpolation
             card.querySelector(".h6").textContent = "per month";
           } else if (planType === "yearly") {
-            priceElement.textContent = R${yearlyPrice};
+            priceElement.textContent = `R${yearlyPrice}`;  // Corrected string interpolation
             card.querySelector(".h6").textContent = "per year";
           }
         });
-
+      
         // Update the Custom Plan
         const customPlanText = document.getElementById("customPlanPriceText");
         if (planType === "monthly") {
@@ -353,21 +350,14 @@
         } else if (planType === "yearly") {
           customPlanText.textContent = "Billed yearly";
         }
-
+      
         // Toggle button styles
         document.getElementById("monthlyBtn").classList.toggle("btn-primary");
-        document
-          .getElementById("monthlyBtn")
-          .classList.toggle("btn-outline-secondary");
+        document.getElementById("monthlyBtn").classList.toggle("btn-outline-secondary");
         document.getElementById("yearlyBtn").classList.toggle("btn-primary");
-        document
-          .getElementById("yearlyBtn")
-          .classList.toggle("btn-outline-secondary");
+        document.getElementById("yearlyBtn").classList.toggle("btn-outline-secondary");
       }
-
-      // Initialize with monthly view
-      togglePricing("monthly");
-    </script>
+          </script>
   </body>
 </html>
 {% endblock %}
