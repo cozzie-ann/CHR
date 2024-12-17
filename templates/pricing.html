@@ -1,8 +1,4 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,10 +35,14 @@
       .pricing-card {
         max-width: 250px; /* Restrict width of cards */
         margin: 0 auto; /* Center cards horizontally */
+        
       }
+
+      
 
       .block-content .price {
         font-size: 2rem; /* Make price font smaller for smaller cards */
+        
       }
 
       .block-content h6 {
@@ -86,62 +86,63 @@
       }
 
       .radio-inputs {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 0.5rem;
-  background-color: #EEE;
-  box-sizing: border-box;
-  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-  padding: 0.25rem;
-  width: 300px;
-  font-size: 14px;
-}
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #eee;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 300px;
+        font-size: 14px;
+      }
 
-.radio-inputs .radio {
-  flex: 1 1 auto;
-  text-align: center;
-}
+      .radio-inputs .radio {
+        flex: 1 1 auto;
+        text-align: center;
+      }
 
-.radio-inputs .radio input {
-  display: none;
-}
+      .radio-inputs .radio input {
+        display: none;
+      }
 
-.radio-inputs .radio .name {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  border: none;
-  padding: .5rem 0;
-  color: rgba(51, 65, 85, 1);
-  transition: all .15s ease-in-out;
-}
+      .radio-inputs .radio .name {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0.5rem 0;
+        color: rgba(51, 65, 85, 1);
+        transition: all 0.15s ease-in-out;
+      }
 
-.radio-inputs .radio input:checked + .name {
-  background-color: #fff;
-  font-weight: 600;
-}
+      .radio-inputs .radio input:checked + .name {
+        background-color: #fff;
+        font-weight: 600;
+      }
 
-.border-purple {
-  border-color: #6a1b9a !important;  /* Purple border */
-}
+      .border-purple {
+        border-color: #6a1b9a !important; /* Purple border */
+      }
 
-.text-purple {
-  color: #6a1b9a !important;  /* Purple text */
-}
+      .text-purple {
+        color: #6a1b9a !important; /* Purple text */
+      }
+
+      
     </style>
   </head>
   <body>
     <div class="content">
-      <h2 class="content-heading">Pricing Plans</h2>
+      <h2 class="content-heading-center">Pricing Plans</h2>
 
       <div class="py-5 text-center">
-        <a href="index.html">
-          {% comment %} <i class="fa fa-2x fa-circle-notch text-primary"></i> {% endcomment %}
-        </a>
-        <h1 class="h3 fw-bold mt-3 mb-2">We have exclusive plans just for you!</h1>
+        <h1 class="h3 fw-bold mt-3 mb-2">
+          We have exclusive plans just for you!
+        </h1>
       </div>
 
       <!-- Toggle Buttons for Monthly / Yearly -->
@@ -153,7 +154,7 @@
         >
           Monthly Subscriptions
         </button>
-        
+
         <button
           id="yearlyBtn"
           class="btn btn-outline-secondary mx-2"
@@ -161,20 +162,22 @@
         >
           Yearly
         </button>
-        
       </div>
 
       <div class="row justify-content-center mb-4">
         <div class="col-md-10 col-xl-6">
-          <div class="input-group input-group-lg border border-purple p-3 rounded-3 mb-2 d-flex justify-content-center align-items-center">
-            <span class="text-purple font-weight-bold">ANNUAL BASE FEE R828 (ONCE-OFF)</span>
+          <div
+            class="input-group input-group-lg border border-purple p-3 rounded-3 mb-2 d-flex justify-content-center align-items-center"
+          >
+            <span class="text-purple font-weight-bold"
+              >ANNUAL BASE FEE R828 (ONCE-OFF)</span
+            >
           </div>
         </div>
       </div>
-            
-      
+
       <div class="row">
-        <!-- Individual Plan -->
+        <!-- Option 1 -->
         <div
           class="col-md-2 col-xl-2 pricing-card"
           data-monthly-price="28.75"
@@ -187,10 +190,10 @@
             <div class="block-header">
               <h3 class="block-title">Option 1</h3>
             </div>
-            <div class="block-content bg-body-light">
+            <div class="block-content" style="background-color: #73408b; color:#fff;">
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R28.75</p>
-                <p class="h6 text-muted">per month</p>
+                <p class="h6 ">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -204,7 +207,7 @@
           </a>
         </div>
 
-        <!-- Freelance Plan -->
+        <!-- Option 2 -->
         <div
           class="col-md-2 col-xl-2 pricing-card"
           data-monthly-price="26.45"
@@ -217,10 +220,10 @@
             <div class="block-header">
               <h3 class="block-title">Option 2</h3>
             </div>
-            <div class="block-content bg-body-light">
+            <div class="block-content" style="background-color: #73408b; color:#fff;">
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R26.45</p>
-                <p class="h6 text-muted">per month</p>
+                <p class="h6 ">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -234,7 +237,7 @@
           </a>
         </div>
 
-        <!-- Small Business Plan -->
+        <!-- Option 3 -->
         <div
           class="col-md-2 col-xl-2 pricing-card"
           data-monthly-price="24.75"
@@ -247,10 +250,10 @@
             <div class="block-header">
               <h3 class="block-title">Small Business</h3>
             </div>
-            <div class="block-content bg-body-light">
+            <div class="block-content" style="background-color: #73408b; color:#fff;">
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R24.75</p>
-                <p class="h6 text-muted">per month</p>
+                <p class="h6 ">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -264,7 +267,7 @@
           </a>
         </div>
 
-        <!-- Corporate Plan -->
+        <!-- Option 4 -->
         <div
           class="col-md-2 col-xl-2 pricing-card"
           data-monthly-price="23"
@@ -277,10 +280,10 @@
             <div class="block-header">
               <h3 class="block-title">Corporate</h3>
             </div>
-            <div class="block-content bg-body-light">
+            <div class="block-content" style="background-color: #73408b; color:#fff;">
               <div class="py-2">
                 <p class="price h1 fw-bold mb-2">R23.00</p>
-                <p class="h6 text-muted">per month</p>
+                <p class="h6 ">per month</p>
               </div>
             </div>
             <div class="block-content">
@@ -295,14 +298,22 @@
         </div>
 
         <!-- Custom Plan -->
-        <div class="col-md-2 col-xl-2 pricing-card" data-monthly-price="Special Request" data-yearly-price="Special Request">
-          <a class="block block-rounded block-link-shadow text-center" href="{% url 'pricing:pricing_inquiry' 'Custom' 28.75 %}">
+        <div
+          class="col-md-2 col-xl-2 pricing-card"
+          data-monthly-price="Special Request"
+          data-yearly-price="Special Request"
+        >
+          <a
+            class="block block-rounded block-link-shadow text-center"
+            href="{% url 'pricing:pricing_inquiry' 'Custom' 28.75 %}"
+          >
             <div class="block-header">
               <h3 class="block-title">Custom</h3>
             </div>
-            <div class="block-content bg-body-light">
-              <div class="py-2 d-flex justify-content-center align-items-center">
-                <!-- Special Request Text -->
+            <div class="block-content" style="background-color: #73408b; color:#fff;">
+              <div
+                class="py-2 d-flex justify-content-center align-items-center"
+              >
                 <p class="price h3 fw-bold mb-0 mr-2">Special Request</p>
               </div>
             </div>
@@ -316,33 +327,39 @@
             </div>
           </a>
         </div>
-            <!-- JavaScript for Toggle -->
+      </div>
+    </div>
+
+    <!-- JavaScript for Toggle -->
     <script>
       function togglePricing(planType) {
         // Select all pricing cards
         const cards = document.querySelectorAll(".pricing-card");
-      
+
         cards.forEach((card) => {
           const monthlyPrice = card.getAttribute("data-monthly-price");
           const yearlyPrice = card.getAttribute("data-yearly-price");
-      
+
           // Skip the custom plan card
-          if (monthlyPrice === "Special Request" || yearlyPrice === "Special Request") {
+          if (
+            monthlyPrice === "Special Request" ||
+            yearlyPrice === "Special Request"
+          ) {
             return; // Skip this card
           }
-      
+
           const priceElement = card.querySelector(".price");
-      
+
           // Show monthly or yearly based on the selected plan
           if (planType === "monthly") {
-            priceElement.textContent = `R${monthlyPrice}`;  // Corrected string interpolation
+            priceElement.textContent = `R${monthlyPrice}`; // Corrected string interpolation
             card.querySelector(".h6").textContent = "per month";
           } else if (planType === "yearly") {
-            priceElement.textContent = `R${yearlyPrice}`;  // Corrected string interpolation
+            priceElement.textContent = `R${yearlyPrice}`; // Corrected string interpolation
             card.querySelector(".h6").textContent = "per year";
           }
         });
-      
+
         // Update the Custom Plan
         const customPlanText = document.getElementById("customPlanPriceText");
         if (planType === "monthly") {
@@ -350,14 +367,18 @@
         } else if (planType === "yearly") {
           customPlanText.textContent = "Billed yearly";
         }
-      
+
         // Toggle button styles
         document.getElementById("monthlyBtn").classList.toggle("btn-primary");
-        document.getElementById("monthlyBtn").classList.toggle("btn-outline-secondary");
+        document
+          .getElementById("monthlyBtn")
+          .classList.toggle("btn-outline-secondary");
         document.getElementById("yearlyBtn").classList.toggle("btn-primary");
-        document.getElementById("yearlyBtn").classList.toggle("btn-outline-secondary");
+        document
+          .getElementById("yearlyBtn")
+          .classList.toggle("btn-outline-secondary");
       }
-          </script>
+    </script>
   </body>
 </html>
 {% endblock %}

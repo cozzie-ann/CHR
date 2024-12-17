@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{%load static%}
+{% load static %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pricing Enquiry Form</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,113 +27,54 @@
                 <h3 class="card-title text-center mb-4">Enquiry Form</h3>
 
                 <div class="mb-3">
-                  <label for="company_name" class="form-label"
-                    >Company Name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="company_name"
-                    name="company_name"
-                    required
-                  />
+                  <label for="company_name" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company_name" name="company_name" required />
                 </div>
 
                 <div class="mb-3">
-                  <label for="contact_person" class="form-label"
-                    >Contact Person</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="contact_person"
-                    name="contact_person"
-                    required
-                  />
+                  <label for="contact_person" class="form-label">Contact Person</label>
+                  <input type="text" class="form-control" id="contact_person" name="contact_person" required />
                 </div>
 
                 <div class="mb-3">
                   <label for="phone" class="form-label">Phone</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="phone"
-                    name="phone"
-                    required
-                  />
+                  <input type="text" class="form-control" id="phone" name="phone" required />
                 </div>
 
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    required
-                  />
+                  <input type="email" class="form-control" id="email" name="email" required />
                 </div>
 
                 <div class="mb-3">
-                  <label for="number_of_employees" class="form-label"
-                    >Number of Employees</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="number_of_employees"
-                    name="number_of_employees"
-                    min="1"
-                    required
-                  />
+                  <label for="number_of_employees" class="form-label">Number of Employees</label>
+                  <input type="number" class="form-control" id="number_of_employees" name="number_of_employees" min="1" required />
                 </div>
 
                 <div class="mb-3">
-                  <label for="enquiry_message" class="form-label"
-                    >Enquiry Message</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="enquiry_message"
-                    name="enquiry_message"
-                    rows="4"
-                    required
-                  ></textarea>
+                  <label for="enquiry_message" class="form-label">Enquiry Message</label>
+                  <textarea class="form-control" id="enquiry_message" name="enquiry_message" rows="4" required></textarea>
                 </div>
 
                 <div class="mb-3">
                   <label for="plan_name" class="form-label">Plan Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="plan_name"
-                    name="plan_name"
-                    value="{{ plan_name }}"
-                    readonly
-                  />
+                  <select class="form-control" id="plan_name" name="plan_name">
+                    <option value="Option 1" {% if plan_name == 'Option 1' %}selected{% endif %}>Option 1</option>
+                    <option value="Option 2" {% if plan_name == 'Option 2' %}selected{% endif %}>Option 2</option>
+                    <option value="Small Business" {% if plan_name == 'Small Business' %}selected{% endif %}>Small Business</option>
+                    <option value="Corporate" {% if plan_name == 'Corporate' %}selected{% endif %}>Corporate</option>
+                    <option value="Custom" {% if plan_name == 'Custom' %}selected{% endif %}>Custom</option>
+                  </select>
                 </div>
-
                 <div class="mb-3">
-                  <label for="plan_amount" class="form-label"
-                    >Plan Amount</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="plan_amount"
-                    name="plan_amount"
-                    readonly
-                  />
-                </div>
+                  <label for="plan_amount" class="form-label">Plan Amount</label>
+                  <select id="plan_amount" name="plan_amount" class="form-control">
+                    <!-- Plan amounts will be populated dynamically -->
+                  </select>
+                </div>              
 
-                <!-- Hidden input for plan calculation -->
                 <input type="hidden" name="plan_calc" id="plan_calc" />
-
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="2ae97d79-731b-47bb-92b5-9cab34803def"
-                />
+                <input type="hidden" name="access_key" value="2ae97d79-731b-47bb-92b5-9cab34803def" />
 
                 <div class="text-center mt-4">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -147,114 +88,102 @@
 
     <script>
       // Get elements
-      const numberOfEmployeesInput = document.getElementById(
-        "number_of_employees"
-      );
+      const numberOfEmployeesInput = document.getElementById("number_of_employees");
       const planAmountInput = document.getElementById("plan_amount");
       const planCalcInput = document.getElementById("plan_calc");
       const planNameInput = document.getElementById("plan_name");
-
-      // Plan data (employee range per plan)
-      const planEmployeeLimits = {
-        "Option 1": { min: 1, max: 5, amount: 28.75 },
-        "Option 2": { min: 6, max: 10, amount: 26.45 },
-        "Small Business": { min: 11, max: 50, amount: 24.75 },
-        Corporate: { min: 101, max: 200, amount: 23.00 },
-        Custom: { min: 201, max: 1000, amount: "Custom" },
+    
+      // Pricing data: Plan amounts for monthly and yearly
+      const pricingData = {
+        "Option 1": { monthly: 28.75, yearly: 345 },
+        "Option 2": { monthly: 26.45, yearly: 317.40 },
+        "Small Business": { monthly: 24.75, yearly: 297 },
+        "Corporate": { monthly: 23, yearly: 262.20 },
+        "Custom": { monthly: "Special Request", yearly: "Special Request" }
       };
-
-      // Function to calculate the value and update the hidden input
-      function updatePlanCalculation() {
-        const numberOfEmployees = parseInt(numberOfEmployeesInput.value, 10) || 0; // Get number of employees, default to 0
-        let planAmount = planAmountInput.value.trim(); // Get plan amount
     
-        // Remove "R" symbol from plan amount if present
-        planAmount = parseFloat(planAmount.replace("R", "").trim());
-    
-        // Check if the planAmount is a valid number
-        if (isNaN(planAmount)) {
-            console.error("Invalid plan amount:", planAmount);
-            return; // Stop execution if the planAmount is invalid
-        }
-    
-        // If it's a custom plan, prevent calculation
-        if (planAmount === "Custom") {
-            planCalcInput.value = "Custom Plan - Contact Us";
-        } else {
-            const totalAmount = numberOfEmployees * planAmount; // Calculate total amount
-            planCalcInput.value = totalAmount.toFixed(2); // Format to 2 decimal places
-        }
-    }
-      // Function to update the employee limit and plan amount based on the selected plan
-      function updateEmployeeLimit() {
+      // Function to update the Plan Amount dropdown with the selected plan's amounts
+      function updatePlanDropdown() {
         const selectedPlan = planNameInput.value.trim();
-        const planLimit = planEmployeeLimits[selectedPlan] || {
-          min: 0,
-          max: 1000,
-          amount: 0,
-        };
-
-        // Update the input's min and max attributes
-        numberOfEmployeesInput.min = planLimit.min;
-        numberOfEmployeesInput.max = planLimit.max;
-
-        // Update plan amount field if it's not a custom plan
-        if (planLimit.amount !== "Custom") {
-          planAmountInput.value = "R" + planLimit.amount;
-        } else {
-          planAmountInput.value = "Custom";
+        const plan = pricingData[selectedPlan];
+        
+        if (plan) {
+          // Clear the dropdown
+          planAmountInput.innerHTML = '';
+    
+          // Populate the dropdown with monthly/yearly options for the selected plan
+          if (plan.monthly !== "Special Request") {
+            planAmountInput.innerHTML += `
+              <option value="monthly">Monthly - R${plan.monthly.toFixed(2)}</option>
+              <option value="yearly">Yearly - R${plan.yearly.toFixed(2)}</option>
+            `;
+          } else {
+            // For custom plans
+            planAmountInput.innerHTML += `
+              <option value="monthly">Monthly - Special Request</option>
+              <option value="yearly">Yearly - Special Request</option>
+            `;
+          }
         }
-
-        // Display alert with employee range
-        alert(
-          `This plan supports ${planLimit.min} to ${planLimit.max} employees.`
-        );
-      }
-
-      // Add event listeners to recalculate when the user updates the number of employees
-      numberOfEmployeesInput.addEventListener("input", updatePlanCalculation);
-
-      // Event listener to update the employee limit when the plan changes
-      planNameInput.addEventListener("change", updateEmployeeLimit);
-
-      // Optional: Update hidden input on page load to handle default values
-      window.addEventListener("load", () => {
+        // Automatically update the total amount calculation based on selected plan and amount
         updatePlanCalculation();
-        updateEmployeeLimit(); // Ensure limits are set on page load
+      }
+    
+      // Function to update the total calculation based on selected plan and plan type
+      function updatePlanCalculation() {
+        const selectedPlan = planNameInput.value.trim();
+        const selectedPlanType = planAmountInput.value;
+        const plan = pricingData[selectedPlan];
+        
+        if (plan) {
+          const planAmount = plan[selectedPlanType];
+          
+          if (planAmount === "Special Request") {
+            planCalcInput.value = "Custom Plan - Contact Us";
+          } else {
+            // Calculate the total amount based on the number of employees
+            const totalAmount = numberOfEmployeesInput.value * planAmount;
+            planCalcInput.value = `R${totalAmount.toFixed(2)}`;
+          }
+        }
+      }
+    
+      // Event listener for plan selection change (updates the dropdown with correct amounts)
+      planNameInput.addEventListener("change", function() {
+        updatePlanDropdown();
+      });
+    
+      // Event listener for plan type (monthly/yearly) selection change
+      planAmountInput.addEventListener("change", function() {
+        updatePlanCalculation();
+      });
+    
+      // Event listener for number of employees input change (recalculates total)
+      numberOfEmployeesInput.addEventListener("input", function() {
+        updatePlanCalculation();
+      });
+    
+      // Initialize on page load
+      window.addEventListener("load", () => {
+        updatePlanDropdown();
+        updatePlanCalculation();
       });
     </script>
-
+            
     <style>
       body {
-        background-image: url("{% static 'media/photos/93afce46fd2aa5f38c70ae88e5a88a85.jpg' %}"); 
-        background-color:black;
+        background-color: #73408b;
         background-size: cover;
         background-position: center;
-        height: 100vh; /* Make the background cover the full height */
+        height: 100vh;
         margin: 0;
       }
-
-      .form-container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
       .btn-primary {
         background-color: #007bff;
         color: white;
       }
-
       .btn-primary:hover {
         background-color: #0056b3;
-      }
-
-      /* Optional: Responsive tweaks */
-      @media (max-width: 576px) {
-        .form-container {
-          padding: 20px;
-        }
       }
     </style>
   </body>

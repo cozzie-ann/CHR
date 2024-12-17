@@ -1,4 +1,3 @@
-# models.py
 from django.db import models
 
 class PricingInquiry(models.Model):
@@ -18,6 +17,7 @@ class PricingInquiry(models.Model):
     enquiry_message = models.TextField()
     plan_name = models.CharField(choices=PLAN_CHOICES, max_length=50)
     plan_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    
+    pricing_type = models.CharField(max_length=10, choices=[('monthly', 'Monthly'), ('yearly', 'Yearly')])
+
     def __str__(self):
         return f"Inquiry from {self.company_name} for {self.plan_name} plan"

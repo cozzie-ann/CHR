@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from .converters import FloatConverter
 
@@ -13,7 +13,7 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('services/', views.services, name='services'),
 
-    path('inquiry/<str:plan_name>/<float:plan_amount>/', views.pricing_inquiry, name='pricing_inquiry'),
+    re_path(r'^inquiry/(?P<plan_name>[^/]+)/(?P<plan_amount>\d+(\.\d+)?|)/$', views.pricing_inquiry, name='pricing_inquiry'),
     path('base/', views.base, name='base'),
 
     
