@@ -19,53 +19,57 @@
 {% endblock %} {% block content %}
 <!-- Masthead header -->
 
+{% comment %} <hr
+  style="
+    border: 0;
+    height: 5px;
+    background-color: #3d0059;
+    margin-top: 0;
+    margin-bottom: 0;
+  "
+/> {% endcomment %}
+{% comment %}
 <hr
-style="
-  border: 0;
-  height: 5px;
-  background-color: #3d0059;
-  margin-top: 0;
-  margin-bottom: 0;
-"
+  style="
+    border: 0;
+    height: 5px;
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+  "
 />
-<hr
-style="
-  border: 0;
-  height: 5px;
-  background-color: white;
-  margin-top: 0;
-  margin-bottom: 0;
-"
-/>
+{% endcomment %}
 
-<header class="masthead" id="home">
-  <div class="container px-5">
-    <div class="row gx-5 align-items-center">
-      <!-- Left Side with Text -->
-      <div class="col-12 col-lg-6 text-center text-lg-start">
-        <div class="mb-5 mb-lg-0">
-          <h1 class="display-1 lh-1 mb-3 font-weight-bold text-white">
-            Seamless HR Solutions for the everyday company
-          </h1>
-          <p class="lead fw-normal text-muted mb-5 bordered-text">
-            HR solutions specifically for SMMEs and frontline employees.
-          </p>
+<div class="container-fluid p-0">
+  <header class="masthead" id="home">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <!-- Left Side with Text -->
+        <div class="col-12 col-lg-6 text-center text-lg-start">
+          <div class="mb-5 mb-lg-0">
+            <h1 class="display-1 lh-1 mb-3 font-weight-bold text-white">
+              Seamless HR Solutions for the everyday company
+            </h1>
+            <p class="lead fw-normal text-muted mb-5 bordered-text">
+              HR solutions specifically for SMMEs and frontline employees.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- Right Side with Laptop Image -->
-      <div class="col-12 col-lg-6 text-center">
-        <div class="masthead-device-mockup">
-          <img
-            src="{% static 'media/photos/laptop.png' %}"
-            class="laptop-image img-fluid"
-            alt="Laptop"
-          />
+        <!-- Right Side with Laptop Image -->
+        <div class="col-12 col-lg-6 text-center">
+          <div class="masthead-device-mockup">
+            <img
+              src="{% static 'media/photos/3 (2).png' %}"
+              class="laptop-image img-fluid"
+              alt="Laptop"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 
 <!-- Section: Statistics -->
 <section class="statistics-section py-5">
@@ -126,37 +130,77 @@ style="
       <div class="row justify-content-center">
         <!-- First Row of Logos (5 logos) -->
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/Adonai.png' %}" alt="Partner 1" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/Adonai.png' %}"
+            alt="Adonai"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/BA.png' %}" alt="Partner 2" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/BA.png' %}"
+            alt="Brooklyn Aesthetics"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/EB.png' %}" alt="Partner 3" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/EB.png' %}"
+            alt="Exclusive Books"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/EE.png' %}" alt="Partner 4" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/EE.png' %}"
+            alt="Easy Equities"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/Mapunyane.png' %}" alt="Partner 5" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/Mapunyane.png' %}"
+            alt="Mapunyane"
+            class="img-fluid"
+          />
         </div>
       </div>
       <div class="row justify-content-center">
         <!-- Second Row of Logos (5 logos) -->
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/Mulax.png' %}" alt="Partner 6" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/Mulax.png' %}"
+            alt="Mulax"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/MyDough.png' %}" alt="Partner 7" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/MyDough.png' %}"
+            alt="MyDough"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/Purcee.png' %}" alt="Partner 8" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/Purcee.png' %}"
+            alt="Purcee Industrial Africa"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/Telkom.png' %}" alt="Partner 9" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/Telkom.png' %}"
+            alt="Telkom"
+            class="img-fluid"
+          />
         </div>
         <div class="col-md-2 col-sm-3 mb-4">
-          <img src="{% static 'media/photos/VHG.png' %}" alt="Partner 10" class="img-fluid" />
+          <img
+            src="{% static 'media/photos/VHG.png' %}"
+            alt="VHG Consulting"
+            class="img-fluid"
+          />
         </div>
       </div>
     </div>
@@ -203,199 +247,215 @@ style="
 {% endblock %}
 
 <style>
-  /* Apply background image to the entire body */
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure body takes full height of the page */
-    background: url('{% static "media/photos/bg.jpg" %}') no-repeat center
-      center fixed;
-    background-size: cover; /* Ensures the image covers the entire page */
-    font-family: "Montserrat", sans-serif; /* Consistent font across the page */
+    /* Apply background image to the entire body */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Ensure body takes full height of the page */
+      {% comment %} background: url('{% static "media/photos/bg.jpg" %}') no-repeat center {% endcomment %}
+        center fixed;
+      background-size: cover; /* Ensures the image covers the entire page */
+      font-family: "Montserrat", sans-serif; /* Consistent font across the page */
+    }
+
+    /* Ensure the body takes up the entire height */
+    html,
+    body {
+      height: 100%;
+    }
+
+    .masthead::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background: white;
+      clip-path: polygon(50% 100%, 100% 100%, 100% 0);
+      z-index: 1;
   }
 
-  /* Ensure the body takes up the entire height */
-  html,
-  body {
-    height: 100%;
-  }
+    /* Masthead section */
+    .masthead {
+      position: relative;
+      z-index: 1; /* Ensure content is above background */
+      height: 100vh; /* Full height of viewport */
+      background-color: #73408b;
+      color: white;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* Masthead section */
-  .masthead {
-    position: relative;
-    z-index: 1; /* Ensure content is above background */
-    height: 100vh; /* Full height of viewport */
-    background: none; /* Remove background from masthead as it's on the body */
-  }
+    /* Styling for masthead text */
+    .masthead h1,
+    .masthead p {
+      color: white; /* White text for contrast */
+    }
 
-  /* Styling for masthead text */
-  .masthead h1,
-  .masthead p {
-    color: white; /* White text for contrast */
-  }
+    /* Container within masthead */
+    .masthead .container {
+      position: relative;
+      z-index: 2;
+    }
 
-  /* Container within masthead */
-  .masthead .container {
-    position: relative;
-    z-index: 2;
-  }
+    .laptop-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transform: scale(2.1);
+    }
 
-  .laptop-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    transform: scale(2.3);
-  }
+    /* Bordered Text */
+    .bordered-text {
+      border: 1px solid #c8415d;
+      padding: 10px;
+      border-radius: 15px;
+      color: #c8415d !important;
+      background-color: white;
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 1rem;
+    }
 
-  /* Bordered Text */
-  .bordered-text {
-    border: 1px solid #c8415d;
-    padding: 10px;
-    border-radius: 15px;
-    color: #c8415d !important;
-    background-color: white;
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 1rem;
-  }
+    /* Ensure content stays above the background */
+    .main-content {
+      position: relative;
+      z-index: 2; /* Ensure content stays above background */
+      padding: 40px 20px;
+    }
 
-  /* Ensure content stays above the background */
-  .main-content {
-    position: relative;
-    z-index: 2; /* Ensure content stays above background */
-    padding: 40px 20px;
-  }
+    /* Styling for the Statistics Section */
+    .statistics-section {
+      background-color: #73408b;
+      padding: 60px 0;
+    }
 
-  /* Styling for the Statistics Section */
-  .statistics-section {
-    background-color: #73408b;
-    padding: 60px 0;
-  }
+    .statistics-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+    }
 
-  .statistics-section h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-  }
+    .statistics-section p {
+      font-size: 1.125rem;
+      color: #9d4bcb;
+    }
 
-  .statistics-section p {
-    font-size: 1.125rem;
-    color: #9d4bcb;
-  }
-
-  .statistics-card {
-    background-color: white;
-    border: 1px solid #c8415d;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .statistics-title {
-    font-size: 2.5rem;
-    color: #9d4bcb;
-    font-weight: bold;
-  }
-
-  .statistics-description {
-    font-size: 1rem;
-    color: #6c757d;
-    font-weight: 400;
-  }
-
-  .statistics-card + .statistics-card {
-    margin-top: 20px;
-  }
-
-  /* Styling for Partner Logos Section */
-  .bg-body-light {
-    background-color: #f8f9fa;
-  }
-
-  /* Styling for Partner Logos Section */
-  .partner-logos-container {
-    border: 2px solid #73408b; /* Purple Border */
-    background-color: #ffffff; /* White Background */
-    padding: 20px;
-    border-radius: 25px;
-    box-sizing: border-box; /* Ensure padding doesn't affect the border */
-  }
-
-  .partner-logos-container .col-md-2 {
-    display: flex;
-    justify-content: center; /* Center logos horizontally */
-    align-items: center; /* Align logos vertically */
-  }
-  
-  /* Ensure logos are responsive */
-  .partner-logos-container img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain; /* Ensure the image maintains its aspect ratio */
-  }
-  
-  /* Additional margin to ensure some space between rows */
-  .partner-logos-container .row {
-    margin-bottom: 20px;
-  }
-
-  .partner-logos-container .col-md-2,
-  .partner-logos-container .col-sm-3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Ensuring that the border is not being overridden by any other global settings */
-  .partner-logos-container {
-    border-width: 2px;
-    border-style: solid;
-    border-color: #73408b;
-  }
-
-  .bg-body-light h2 {
-    color: white;
-  }
-
-  /* Additional specificity for border */
-  .bg-body-light .partner-logos-container {
-    border: 5px solid #73408b !important;
-  }
-
-  /* Border styling for the section with the heading */
-  .border-section {
-    border: 2px solid #73408b; /* Purple border color */
-    background-color:#73408b;
-    padding: 20px;
-    border-radius: 75px; /* Rounded corners */
-    text-align: center; /* Center content */
-    margin-bottom: 30px;
-    color:white;
-  }
-
-  .col-md-2 .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 767px) {
-    .statistics-section .row {
+    .statistics-card {
+      background-color: white;
+      border: 1px solid #c8415d;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
     }
 
-    .statistics-section .col-md-4 {
-      margin-bottom: 20px;
+    .statistics-title {
+      font-size: 2.5rem;
+      color: #9d4bcb;
+      font-weight: bold;
     }
 
-    .row {
+    .statistics-description {
+      font-size: 1rem;
+      color: #6c757d;
+      font-weight: 400;
+    }
+
+    .statistics-card + .statistics-card {
+      margin-top: 20px;
+    }
+
+    /* Styling for Partner Logos Section */
+    .bg-body-light {
+      background-color: #f8f9fa;
+    }
+
+    /* Styling for Partner Logos Section */
+    .partner-logos-container {
+      border: 2px solid #73408b; /* Purple Border */
+      background-color: #ffffff; /* White Background */
+      padding: 20px;
+      border-radius: 25px;
+      box-sizing: border-box; /* Ensure padding doesn't affect the border */
+    }
+
+    .partner-logos-container .col-md-2 {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: center; /* Center logos horizontally */
+      align-items: center; /* Align logos vertically */
     }
 
-    .col-md-2 {
-      flex: 1 0 45%;
+    /* Ensure logos are responsive */
+    .partner-logos-container img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    }
+
+    /* Additional margin to ensure some space between rows */
+    .partner-logos-container .row {
       margin-bottom: 20px;
     }
-  }
+
+    .partner-logos-container .col-md-2,
+    .partner-logos-container .col-sm-3 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Ensuring that the border is not being overridden by any other global settings */
+    .partner-logos-container {
+      border-width: 2px;
+      border-style: solid;
+      border-color: #73408b;
+    }
+
+    .bg-body-light h2 {
+      color: white;
+    }
+
+    /* Additional specificity for border */
+    .bg-body-light .partner-logos-container {
+      border: 5px solid #73408b !important;
+    }
+
+    /* Border styling for the section with the heading */
+    .border-section {
+      border: 2px solid #73408b; /* Purple border color */
+      background-color: #73408b;
+      padding: 20px;
+      border-radius: 75px; /* Rounded corners */
+      text-align: center; /* Center content */
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .col-md-2 .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 767px) {
+      .statistics-section .row {
+        text-align: center;
+      }
+
+      .statistics-section .col-md-4 {
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .col-md-2 {
+        flex: 1 0 45%;
+        margin-bottom: 20px;
+      }
+    }
 </style>
 {% endblock %}
