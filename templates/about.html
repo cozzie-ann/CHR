@@ -30,8 +30,8 @@
   </head>
   <body>
     <main id="main-container">
-      <!-- Hero -->
-      <div class="bg-body-light" style="background-image: url('{% static 'media/photos/clock.png' %}');">
+      <!-- Hero Section: About Us, Mission, Vision with Clock Background -->
+      <div class="bg-body-light" style="background-image: url('{% static 'media/photos/clock.png' %}'); background-size: cover; background-position: center;">
         <div class="content content-full">
           <div class="row text-center py-5">
             <!-- About Column -->
@@ -44,7 +44,7 @@
       
             <!-- Vision Column -->
             <div class="col-md-4">
-              <h3 class="h3 mb-3">Vision</h3>
+              <h3 class="h3 mb-3">Our Vision</h3>
               <p>
                 To be the leading provider of innovative, efficient, and compliant HR solutions that empower businesses of all sizes — from small businesses and frontline employers to HR consultants — with the tools they need to manage their workforce seamlessly.
               </p>
@@ -52,7 +52,7 @@
       
             <!-- Mission Column -->
             <div class="col-md-4">
-              <h3 class="h3 mb-3">Mission</h3>
+              <h3 class="h3 mb-3">Our Mission</h3>
               <p>
                 Our mission is to simplify and automate HR tasks, allowing businesses to focus on growth while ensuring compliance with South Africa’s labour laws and tax regulations. We offer a comprehensive, affordable, and user-friendly solution that scales with your business.
               </p>
@@ -62,45 +62,46 @@
       </div>
       <!-- END Section: About, Vision, Mission -->
 
-      <!-- Section: Podcast -->
+      <!-- Section: Podcast and Demo Videos (Clock Background) -->
       <div class="bg-body-extra-light" style="background-image: url('{% static 'media/photos/clock.png' %}'); background-size: cover; background-position: center;">
         <div class="container py-5">
           <div class="text-center push">
-            <h2 class="h1 mb-2">Watch our podcast</h2>
-          </div>
-          <div class="text-center">
-            <p>
-              <a href="https://www.youtube.com/@ConnectHRPodcast" class="link">ConnectHR Podcast</a>
-            </p>
-            <!-- Embed YouTube Video -->
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe
-                class="embed-responsive-item"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/aJAFG6T0Ark?si=753uw-6fEpLOYgye"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
+            <h2 class="h1 mb-2">Feel Free To Check Out Our : </h2>
           </div>
 
-          <!-- Demo Video Section -->
-          <div class="text-center mt-5">
-            <h3 class="h3 mb-2">Watch our demo video</h3>
-            <div class="embed-responsive embed-responsive-16by9">
-              <video class="embed-responsive-item" controls>
-                <source src="{% static 'media/videos/demo_video.mp4' %}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+          <div class="row justify-content-center text-center">
+            <!-- Podcast Video Column -->
+            <div class="col-md-6 mb-4">
+              <h3 class="h3 mb-2">Podcast Videos</h3>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/aJAFG6T0Ark?si=753uw-6fEpLOYgye"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <!-- Demo Video Column -->
+            <div class="col-md-6 mb-4">
+              <h3 class="h3 mb-2">Demo Video</h3>
+              <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" controls>
+                  <source src="{% static 'media/videos/demo_video.mp4' %}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- END Section: Podcast -->
+      <!-- END Section: Podcast and Demo Videos -->
     </main>
 
     <!-- JavaScript -->
