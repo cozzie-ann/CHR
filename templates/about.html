@@ -1,5 +1,5 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -14,25 +14,23 @@
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="{% static 'media/favicons/favicon-192x192.png' %}"
-    />
+      href="{% static 'media/favicons/favicon-192x192.png' %}"/>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
-    />
+      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"/>
     <link
       rel="stylesheet"
       id="css-main"
-      href="{% static 'css/oneui.min.css' %}"
-    />
+      href="{% static 'css/oneui.min.css' %}"/>
     <script src="{% static 'js/setTheme.js' %}"></script>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
     <main id="main-container">
       <!-- Hero -->
-      
-    
       <div class="bg-body-light" style="background-image: url('{% static 'media/photos/clock.png' %}');">
         <div class="content content-full">
           <div class="row text-center py-5">
@@ -62,13 +60,13 @@
           </div>
         </div>
       </div>
-            <!-- END Section: About, Vision, Mission -->
+      <!-- END Section: About, Vision, Mission -->
 
       <!-- Section: Podcast -->
-      <div class="bg-body-extra-light">
-        <div class="content content-full">
-          <div class="py-5 text-center push">
-            <h2 class="h1 mb-2">Watch our podcast </h2>
+      <div class="bg-body-extra-light" style="background-image: url('{% static 'media/photos/clock.png' %}'); background-size: cover; background-position: center;">
+        <div class="container py-5">
+          <div class="text-center push">
+            <h2 class="h1 mb-2">Watch our podcast</h2>
           </div>
           <div class="text-center">
             <p>
@@ -77,6 +75,7 @@
             <!-- Embed YouTube Video -->
             <div class="embed-responsive embed-responsive-16by9">
               <iframe
+                class="embed-responsive-item"
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/aJAFG6T0Ark?si=753uw-6fEpLOYgye"
@@ -88,97 +87,26 @@
               ></iframe>
             </div>
           </div>
+
+          <!-- Demo Video Section -->
+          <div class="text-center mt-5">
+            <h3 class="h3 mb-2">Watch our demo video</h3>
+            <div class="embed-responsive embed-responsive-16by9">
+              <video class="embed-responsive-item" controls>
+                <source src="{% static 'media/videos/demo_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END Section: Podcast -->
-
-      <!-- Section: Strategic Partners -->
-      <div class="bg-body-light">
-        <div class="content content-full">
-          <div class="py-5 text-center push">
-            <h2 class="h1 mb-2">Our Strategic Partners and Clients</h2>
-          </div>
-          <div class="row justify-content-center">
-            <!-- Partner Logos -->
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/Adonai.png' %}"
-                alt="Partner 1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/BA.png' %}"
-                alt="Partner 2"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/EB.png' %}"
-                alt="Partner 3"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/EE.png' %}"
-                alt="Partner 4"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/Mapunyane.png' %}"
-                alt="Partner 5"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/Mulax.png' %}"
-                alt="Partner 6"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/MyDough.png' %}"
-                alt="Partner 7"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/Purcee.png' %}"
-                alt="Partner 8"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/Telkom.png' %}"
-                alt="Partner 9"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-2 col-sm-3 mb-4">
-              <img
-                src="{% static 'media/photos/VHG.png' %}"
-                alt="Partner 10"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END Section: Strategic Partners -->
-
     </main>
 
     <!-- JavaScript -->
     <script src="{% static 'js/oneui.app.min.js' %}"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
 
