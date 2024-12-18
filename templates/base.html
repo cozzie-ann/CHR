@@ -100,16 +100,20 @@
         border-radius: 5px;
       }
 
-      .btn-primary {
-        background-color: #3498db;
-        border-color: #3498db;
+      .btn {
+        background-color: white !important;
+        color: #d4428b !important;
+        border: 2px solid #d4428b;
+        border-radius: 50px;
+        padding: 10px 20px;
       }
 
-      .btn-primary:hover {
-        background-color: #5dade2;
-        border-color: #5dade2;
+      /* Optional: Style the buttons' appearance when hovered over or active */
+      .btn:not(.active):hover {
+        background-color: #d4428b !important;
+        color: white !important;
+        border-color: #d4428b !important;
       }
-
       html {
         scroll-behavior: smooth;
       }
@@ -152,28 +156,68 @@
       <!-- Footer -->
       <footer id="page-footer" class="py-3">
         <div class="container">
-          <div class="row fs-sm">
-            <div class="col-12 col-sm-6 text-center text-sm-start">
-              <a class="fw-semibold" href="{% url 'pricing:home' %}" style="color: white">Connect HR</a> &copy; <span id="current-year"></span>
+          <div class="row fs-sm d-flex justify-content-between">
+            <!-- Left Column: CONTACT US Section and Contact Info -->
+            <div class="col-12 col-sm-6 text-start mb-4">
+              <!-- CONTACT US Heading and Text -->
+              <div class="contact-section mb-4">
+                <h2 class="contact-heading mb-2">CONTACT US</h2>
+                <p class="contact-text">
+                  Reach out to us using the contact details provided or complete the form, and we will respond promptly.
+                </p>
+              </div>
+      
+              <!-- Contact Info -->
+              <div class="footer-contact d-flex flex-column gap-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-map-marker-alt footer-icon me-2"></i>
+                  <span>28 Fricker Road, Illovo, Sandton, Gauteng, 2196</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-envelope footer-icon me-2"></i>
+                  <a href="mailto:sales@connecthr.co.za" class="text-white">
+                    sales@connecthr.co.za
+                  </a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-phone-alt footer-icon me-2"></i>
+                  <a href="tel:+27659125747" class="text-white">
+                    065 912 5747
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-sm-6 text-center text-sm-end footer-icons">
-              <a href="https://www.instagram.com/connecthr_sa/?igsh=MXVoaTh0n3v5Mm5mdg%3D%3D#" target="_blank">
-                <i class="fab fa-instagram footer-logo"></i>
-              </a>
-              <a href="https://www.youtube.com/@ConnectHRPodcast" target="_blank">
-                <i class="fab fa-youtube footer-logo"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/connecthrsa" target="_blank">
-                <i class="fab fa-linkedin footer-logo"></i>
-              </a>
-              <a href="https://www.facebook.com/people/Connect-HR/61550998671947/" target="_blank">
-                <i class="fab fa-facebook-square footer-logo"></i>
-              </a>
+      
+            <!-- Right Column: Logo, Follow Us Text, and Social Icons -->
+            <div class="col-12 col-sm-6 d-flex flex-column align-items-end">
+              <!-- Logo -->
+              <div class="footer-logo mb-2">
+                <img src="{% static 'media/photos/2 (1).png' %}" alt="Company Logo" class="img-fluid" style="max-width: 150px;" />
+              </div>
+      
+              <!-- Follow Us Text -->
+              <div class="text-white fw-bold mb-2">Follow us on our socials</div>
+              
+              <!-- Social Icons -->
+              <div class="footer-icons">
+                <a href="https://www.instagram.com/connecthr_sa/?igsh=MXVoaTh0n3v5Mm5mdg%3D%3D#" target="_blank">
+                  <i class="fab fa-instagram footer-logo me-2"></i>
+                </a>
+                <a href="https://www.youtube.com/@ConnectHRPodcast" target="_blank">
+                  <i class="fab fa-youtube footer-logo me-2"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/connecthrsa" target="_blank">
+                  <i class="fab fa-linkedin footer-logo me-2"></i>
+                </a>
+                <a href="https://www.facebook.com/people/Connect-HR/61550998671947/" target="_blank">
+                  <i class="fab fa-facebook-square footer-logo"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </footer>
-
+                                          
       <!-- Feedback Modal -->
       <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
