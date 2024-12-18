@@ -536,19 +536,21 @@
 
   /* Keyframe for scrolling logos horizontally */
   @keyframes scroll-left {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(-50%);
+    to {
+      transform: translateX(-100%);
     }
   }
-
+  
   /* Optional: Adjust the partner logos size on larger screens */
   @media (min-width: 1200px) {
     .logo-item img {
       max-height: 250px;
     }
+
+    
   }
 
   /* Mobile responsive styling */
@@ -565,12 +567,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-    } 
+    }
 
     .col-md-2 {
       flex: 1 0 45%;
       margin-bottom: 20px;
     }
+
+    
   }
 </style>
 <script src="{% static 'js/oneui.app.min.js' %}"></script>
