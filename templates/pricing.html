@@ -35,10 +35,28 @@
       .pricing-card {
         max-width: 250px; /* Restrict width of cards */
         margin: 0 auto; /* Center cards horizontally */
+        min-height: 400px; /* Set a minimum height for all cards */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure the content is spaced evenly */
+      }
+
+      .block-content {
+        flex-grow: 1; /* Allow block content to grow and fill the available space */
+      }
+
+      .block-content-full {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .block-header,
+      .block-content {
+        padding: 1rem; /* Ensure consistent padding */
       }
 
       .block-content .price {
-        font-size: 2rem; /* Make price font smaller for smaller cards */
+        font-size: 1rem; /* Make price font smaller for smaller cards */
       }
 
       .block-content h6 {
@@ -58,22 +76,26 @@
 
       /* Custom Plan adjustments */
       .pricing-card[data-monthly-price="Special Request"] {
-        max-width: 250px; /* Restrict width to match other cards */
-        min-height: 300px; /* Set reasonable height */
-        font-size: 0.875rem; /* Smaller font size for custom plan */
+        min-height: 400px !important;
+        height: 400px !important; /* Ensure the Custom card has the same height as others */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .pricing-card[data-monthly-price="Special Request"] .price {
-        font-size: 1.5rem; /* Smaller price font */
+        font-size: 1.4rem; /* Smaller price font */
+        margin-bottom:5px;
       }
 
       .pricing-card[data-monthly-price="Special Request"] .fs-sm p {
-        font-size: 0.8rem; /* Smaller description font size */
+        font-size: 1rem; /* Smaller description font size */
       }
 
       .pricing-card[data-monthly-price="Special Request"] .block-header,
-      .pricing-card[data-monthly-price="Special Request"] .block-content {
-        padding: 1rem; /* Reduce padding */
+      .pricing-card[data-monthly-price="Special Request"] .block-content,
+      .pricing-card[data-monthly-price="Special Request"] .block-content-full {
+        padding: 1rem; /* Ensure all sections inside the Custom card are evenly padded */
       }
 
       .pricing-card[data-monthly-price="Special Request"] .btn {
@@ -128,38 +150,34 @@
         color: #6a1b9a !important; /* Purple text */
       }
 
-      <style>
-        /* Hover effect */
-        .btn:hover {
-          background-color: #d4428b !important;
-          color: white !important;
-          border-color: #d4428b !important;
-        }
-      
-        /* Active button state */
-        .btn.active {
-          background-color: #d4428b !important;
-          color: white !important;
-          border-color: #d4428b !important;
-        }
-      
-        /* Default state for buttons */
-        .btn {
-          background-color: white !important;
-          color: #d4428b !important;
-          border: 2px solid #d4428b;
-          border-radius: 50px;
-          padding: 10px 20px;
-        }
-      
-        /* Optional: Style the buttons' appearance when hovered over or active */
-        .btn:not(.active):hover {
-          background-color: #d4428b !important;
-          color: white !important;
-          border-color: #d4428b !important;
-        }
-      </style>
-      
+      .btn:hover {
+        background-color: #d4428b !important;
+        color: white !important;
+        border-color: #d4428b !important;
+      }
+
+      /* Active button state */
+      .btn.active {
+        background-color: #d4428b !important;
+        color: white !important;
+        border-color: #d4428b !important;
+      }
+
+      /* Default state for buttons */
+      .btn {
+        background-color: white !important;
+        color: #d4428b !important;
+        border: 2px solid #d4428b;
+        border-radius: 50px;
+        padding: 10px 20px;
+      }
+
+      /* Optional: Style the buttons' appearance when hovered over or active */
+      .btn:not(.active):hover {
+        background-color: #d4428b !important;
+        color: white !important;
+        border-color: #d4428b !important;
+      }
     </style>
   </head>
   <body>
@@ -180,7 +198,8 @@
             border: 3px solid #73408b;
             background-color: #73408b;
             padding: 10px 50px;
-            border-radius: 50px; font-size:2rem;
+            border-radius: 50px;
+            font-size: 2rem;
           "
         >
           Pricing & Plans
@@ -439,14 +458,14 @@
               style="background-color: #73408b; color: #fff"
             >
               <div
-                class="py-2 d-flex justify-content-center align-items-center"
-              >
-                <p class="price h3 fw-bold mb-0 mr-2">Special Request</p>
+              <div class="py-2">
+                <p class="price h1 fw-bold mb-2">Special Request</p>
+                <p class="h6">per month</p>
               </div>
             </div>
             <div class="block-content">
               <div class="fs-sm py-2">
-                <p>More than 200 Employees</p>
+                <p><strong>200+</strong> Employees</p>
               </div>
             </div>
             <div

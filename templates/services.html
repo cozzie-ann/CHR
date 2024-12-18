@@ -1,209 +1,164 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<div class="container content-boxed mt-4">
+  <!-- Services title container (centered) -->
+  <div class="services-title-container">
+    <div class="services-title">SERVICES</div>
+  </div>
 
-    <style>
-      /* Custom styles for the purple color and rounded border */
-      .services-title-container {
-        border: 2px solid #9b4d96; /* Purple border color */
-        background-color:#9b4d96; 
-        padding: 0px;
-        border-radius: 75px; /* Rounded corners */
-        text-align: center; /* Center content */
-        margin-bottom: 30px; /* Space below the container */
-      }
+  <div class="row">
+    <!-- Left Column: Introduction and List -->
+    <div class="col-md-6 col-xl-6 d-flex flex-column justify-content-center align-items-center" style="min-height: 50vh">
+      <p class="display-4 fw-bold text-center">
+        Our HR Software is<br />specifically<br />designed for:
+      </p>
 
-      .services-title {
-        font-size: 3rem; /* Huge text size */
-        font-weight: bold;
-        color: #fff; /* Purple text color */
-        margin: 0; /* Remove default margin */
-      }
-
-      /* Optional: Adjust bullet points for a cleaner layout */
-      .services-list li {
-        font-size: 1.25rem; /* Slightly larger font for list items */
-        color: #333; /* Dark text color */
-        margin-bottom: 10px; /* Space between list items */
-      }
-
-      .timeline-event-icon {
-        background-color: #ff007f;
-        width: 40px; /* Set width */
-        height: 40px; /* Set height */
-        border-radius: 50%; /* Make it round */
-        display: flex; /* Flexbox to center the icon */
-        justify-content: center; /* Center icon horizontally */
-        align-items: center; /* Center icon vertically */
-        font-size: 18px; /* Icon size */
-      }
-
-      .timeline-event.bg-smooth::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: 2px; /* Adjust line width */
-        height: 100%; /* Make it stretch the whole height of the event */
-        background-color: #ff007f; /* Set the timeline line to pink */
-        transform: translateX(-50%); /* Center the line */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content content-boxed">
-      <h1 class="display-4 fw-semibold text-white mb-2">About Us</h1>
-      <div class="row">
-        <div class="services-title-container">
-          <!-- Huge text for "Services" title -->
-          <div class="services-title">SERVICES</div>
-        </div>
-
-        <div class="col-md-6 col-xl-6 d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
-            <!-- Huge text for the introduction -->
-            <p class="display-4 fw-bold text-center">
-              Our HR Software is<br />specifically<br />designed for:
-            </p>
-          
-            <!-- List with bullet points -->
-            <ul class="list-unstyled" style="color: #9b4d96">
-              <li>
-                <h4><i class="fas fa-circle"></i> Skills Development Agencies</h4>
-              </li>
-              <li>
-                <h4>
-                  <i class="fas fa-circle"></i>  Employers of frontline workers
-                </h4>
-              </li>
-              <li>
-                <h4><i class="fas fa-circle"></i> Small businesses</h4>
-              </li>
-              <li>
-                <h4><i class="fas fa-circle"></i> Contract Workers</h4>
-              </li>
-            </ul>
-          </div>
-                  <div class="col-md-6 col-xl-6">
-          <!-- Updates -->
-          <ul class="timeline timeline-alt py-0">
-            <li class="timeline-event">
-              <div class="timeline-event-icon bg-default">
-                <!-- <i class="fab fa-facebook-f"></i> -->
-              </div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">Payroll Management</h3>
-                </div>
-                <div class="block-content">
-                  <p class="fw-semibold mb-2">
-                    The payroll module handles all aspects of payroll
-                    processing, from salary calculations to statutory deductions
-                    and employer contributions
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-event">
-              <div class="timeline-event-icon bg-modern">
-                <!-- <i class="fa fa-briefcase"></i> -->
-              </div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">Expense Management</h3>
-                  <div class="block-options"></div>
-                </div>
-                <div class="block-content block-content-full">
-                  <p class="fw-semibold mb-2">
-                    Our expense manager allows employees to submit expense
-                    claims for approval, tracking both approval and payment
-                    processes.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-event">
-              <div class="timeline-event-icon bg-info"></div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">
-                    Document Control & Onboarding Compliance
-                  </h3>
-                  <div class="block-options"></div>
-                </div>
-                <div class="block-content">
-                  <p class="fw-semibold mb-2">
-                    The system features a Document Control function that allows
-                    businesses to securely store employee records such as
-                    contracts, disciplinary records, and performance
-                    evaluations.
-                  </p>
-                  <!-- <p>You’re getting more and more followers, keep it up!</p> -->
-                </div>
-              </div>
-            </li>
-            <li class="timeline-event">
-              <div class="timeline-event-icon bg-smooth">
-                <!-- <i class="fa fa-database"></i> -->
-              </div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">Affiliate Feature</h3>
-                  <div class="block-options"></div>
-                </div>
-                <div class="block-content">
-                  <p class="fw-semibold mb-2">
-                    Create payslips for your Clients/Companies
-                  </p>
-                </div>
-              </div>
-            </li>
-            <!-- <li class="timeline-event">
-              <div class="timeline-event-icon bg-dark">
-                
-              </div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">System</h3>
-                  <div class="block-options"></div>
-                </div>
-                <div class="block-content">
-                  <p class="fw-semibold mb-2">App updated to v2.02</p>
-                  <p>
-                    Check the complete changelog at the
-                    <a href="javascript:void(0)">activity page</a>.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-event">
-              <div class="timeline-event-icon bg-modern">
-              </div>
-              <div class="timeline-event-block block">
-                <div class="block-header">
-                  <h3 class="block-title">Products</h3>
-                  <div class="block-options"></div>
-                </div>
-                <div class="block-content block-content-full">
-                  <p class="fw-semibold mb-2">1 New Product was added!</p>
-                  <a
-                    class="item item-rounded bg-muted"
-                    href="javascript:void(0)"
-                  >
-                    <i class="si si-wallet fa-2x text-white-75"></i>
-                  </a>
-                </div>
-              </div>
-            </li> -->
-          </ul>
-          <!-- END Updates -->
-        </div>
-      </div>
+      <ul class="list-unstyled" style="color: #9b4d96; margin-top:30px;">
+        <li><h4><i class="fas fa-circle"></i> Skills Development Agencies</h4></li>
+        <li><h4><i class="fas fa-circle"></i> Employers of frontline workers</h4></li>
+        <li><h4><i class="fas fa-circle"></i> Small businesses</h4></li>
+        <li><h4><i class="fas fa-circle"></i> Contract Workers</h4></li>
+      </ul>
     </div>
-  </body>
-</html>
+
+    <!-- Right Column: Timeline of Features -->
+    <div class="col-md-6 col-xl-6">
+      <ul class="timeline timeline-alt py-0">
+        <li class="timeline-event">
+          <div class="timeline-event-icon" style="background-color:#d4428b"></div>
+          <div class="timeline-event-block block">
+            <div class="block-header">
+              <h3 class="block-title">Payroll Management</h3>
+            </div>
+            <div class="block-content">
+              <p class="fw-semibold mb-2">
+                The payroll module handles all aspects of payroll processing, from salary calculations to statutory deductions and employer contributions.
+              </p>
+            </div>
+          </div>
+        </li>
+        
+        <li class="timeline-event">
+          <div class="timeline-event-icon" style="background-color:#d4428b"></div>
+          <div class="timeline-event-block block">
+            <div class="block-header">
+              <h3 class="block-title">Expense Management</h3>
+            </div>
+            <div class="block-content block-content-full">
+              <p class="fw-semibold mb-2">
+                Our expense manager allows employees to submit expense claims for approval, tracking both approval and payment processes.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-event">
+          <div class="timeline-event-icon" style="background-color:#d4428b"></div>
+          <div class="timeline-event-block block">
+            <div class="block-header">
+              <h3 class="block-title">Document Control & Onboarding Compliance</h3>
+            </div>
+            <div class="block-content">
+              <p class="fw-semibold mb-2">
+                The system features a Document Control function that allows businesses to securely store employee records such as contracts, disciplinary records, and performance evaluations.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-event">
+          <div class="timeline-event-icon" style="background-color:#d4428b"></div>
+          <div class="timeline-event-block block">
+            <div class="block-header">
+              <h3 class="block-title">Affiliate Feature</h3>
+            </div>
+            <div class="block-content">
+              <p class="fw-semibold mb-2">
+                Create payslips for your Clients/Companies
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Services title container */
+  .services-title-container {
+    border: 1px solid #9b4d96; /* Purple border color */
+    background-color: #9b4d96;
+    margin-top: 30px;
+    margin-bottom:10px;
+    padding: 0;
+    border-radius: 75px; /* Rounded corners */
+    text-align: center; /* Center content inside the container */
+    margin-bottom: 30px; /* Space below the container */
+    width: 100%; /* Full width of parent */
+    max-width: 500px; /* Max width to avoid stretching */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+
+  /* Services title text styling */
+  .services-title {
+    font-size: 3rem; /* Huge text size */
+    font-weight: bold;
+    color: #fff; /* White text color */
+    margin: 0; /* Remove default margin */
+  }
+
+  /* Optional: Adjust bullet points for a cleaner layout */
+  .services-list li {
+    font-size: 1.25rem; /* Slightly larger font for list items */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space between list items */
+  }
+
+  /* Timeline styles */
+  .timeline-event-icon {
+    background-color: #ff007f;
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    border-radius: 50%; /* Make it round */
+    display: flex; /* Flexbox to center the icon */
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
+    font-size: 18px; /* Icon size */
+  }
+
+  .timeline-event.bg-smooth::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px; /* Adjust line width */
+    height: 100%; /* Make it stretch the whole height of the event */
+    background-color: #ff007f; /* Set the timeline line to pink */
+    transform: translateX(-50%); /* Center the line */
+  }
+
+  /* Optional: Add some padding to the timeline block for better spacing */
+  .timeline-event-block {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Optional: Style the timeline block headers */
+  .timeline-event-block .block-header h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  /* Optional: Style the content of the timeline events */
+  .timeline-event-block .block-content {
+    font-size: 1rem;
+    color: #333;
+  }
+
+</style>
+
 {% endblock %}
