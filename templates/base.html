@@ -8,40 +8,18 @@
     <title>{% block title %}Base{% endblock %}</title>
 
     <!-- Favicon links -->
-    <link
-      rel="shortcut icon"
-      href="{% static 'media/favicons/favicon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="{% static 'media/favicons/favicon-192x192.png' %}"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}"
-    />
+    <link rel="shortcut icon" href="{% static 'media/favicons/favicon.png' %}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'media/favicons/favicon-192x192.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'media/favicons/apple-touch-icon-180x180.png' %}" />
 
     <!-- Bootstrap CSS (via CDN) -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome CDN for icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
 
     <!-- Custom Styles -->
-    <link
-      rel="stylesheet"
-      id="css-main"
-      href="{% static 'css/oneui.min.css' %}"
-    />
+    <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <!-- Scripts -->
@@ -56,17 +34,17 @@
 
     <style>
       .navbar {
-        height: 100px; /* Set a fixed height for the navbar */
-        line-height: 70px; /* Vertically center content in navbar */
+        height: 100px;
+        line-height: 70px;
       }
 
-      /* Ensure the logo scales properly without affecting navbar */
+      /* Ensure the logo scales properly */
       .navbar-logo {
-        max-width: 100%; /* Ensure logo width doesn't exceed its container */
-        max-height: 120px; /* Ensure logo doesn't exceed a reasonable height */
-        height: auto; /* Maintain aspect ratio */
-        width: auto; /* Keep width proportional */
-        object-fit: contain; /* Ensure logo scales without distortion */
+        max-width: 100%;
+        max-height: 120px;
+        height: auto;
+        width: auto;
+        object-fit: contain;
       }
 
       /* Mobile-first responsive navbar */
@@ -75,7 +53,7 @@
         padding-right: 10px;
       }
 
-      /* Update footer text color for better contrast */
+      /* Footer */
       #page-footer {
         background: linear-gradient(135deg, #9d4bcb, #bd406b);
         color: white;
@@ -96,19 +74,6 @@
         margin-right: 10px;
       }
 
-      /* Ensure smooth scrolling for anchor links */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Mobile Footer Styling */
-      .footer-icons {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 15px;
-      }
-
       .footer-icons a {
         color: white;
         font-size: 30px;
@@ -119,9 +84,8 @@
       }
 
       /* Softer purple for the contact form */
-      .modal-header,
-      .modal-body {
-        background-color: #9c6ecf; /* Soft Purple */
+      .modal-header, .modal-body {
+        background-color: #9c6ecf;
       }
 
       .modal-title {
@@ -129,7 +93,7 @@
       }
 
       .form-floating label {
-        color: #5e4a9f; /* Darker purple for labels */
+        color: #5e4a9f;
       }
 
       .form-control {
@@ -137,13 +101,17 @@
       }
 
       .btn-primary {
-        background-color: #3498db; /* Lighter Blue */
+        background-color: #3498db;
         border-color: #3498db;
       }
 
       .btn-primary:hover {
-        background-color: #5dade2; /* Slightly darker blue on hover */
+        background-color: #5dade2;
         border-color: #5dade2;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -151,86 +119,32 @@
   <body>
     <div class="d-flex flex-column min-vh-100">
       <!-- Navbar -->
-      <nav
-        class="navbar navbar-expand-lg navbar-light shadow-sm"
-        id="mainNav"
-        style="background: white; color: #73408b"
-      >
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav" style="background: white; color: #73408b">
         <div class="container">
           <a class="navbar-brand" href="{% url 'pricing:home' %}">
-            <img
-              src="{% static 'media/photos/3 (1).png' %}"
-              alt="Connect HR"
-              class="navbar-logo"
-            />
+            <img src="{% static 'media/photos/3 (1).png' %}" alt="Connect HR" class="navbar-logo" />
           </a>
-          <!-- Navbar Toggler for smaller screens -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Navbar Links -->
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'pricing:home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'pricing:about' %}"
-                  >About Us</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'pricing:services' %}"
-                  >Services</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'pricing:pricing' %}"
-                  >Pricing</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'pricing:faq' %}">FAQs</a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pricing:home' %}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pricing:about' %}">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pricing:services' %}">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pricing:pricing' %}">Pricing</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pricing:faq' %}">FAQs</a></li>
             </ul>
-            <button
-              class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
-              data-bs-toggle="modal"
-              data-bs-target="#feedbackModal"
-            >
+            <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
               <i class="bi-chat-text-fill me-2"></i> Contact Us
             </button>
           </div>
         </div>
       </nav>
 
-      <hr
-        style="
-          border: 0;
-          height: 5px;
-          background-color: #2c0b3b;
-          margin-top: 0;
-          margin-bottom: 0;
-        "
-      />
-      <hr
-        style="
-          border: 0;
-          height: 5px;
-          background-color: #ffffff;
-          margin-top: 0;
-          margin-bottom: 0;
-        "
-      />
+      <hr style="border: 0; height: 5px; background-color: #2c0b3b; margin-top: 0; margin-bottom: 0;" />
+      <hr style="border: 0; height: 5px; background-color: #ffffff; margin-top: 0; margin-bottom: 0;" />
 
       <!-- Page Content -->
       <main class="flex-fill">{% block content %}{% endblock %}</main>
@@ -240,43 +154,20 @@
         <div class="container">
           <div class="row fs-sm">
             <div class="col-12 col-sm-6 text-center text-sm-start">
-              <a
-                class="fw-semibold"
-                href="{% url 'pricing:home' %}"
-                style="color: white"
-                >Connect HR</a
-              >
-              &copy; <span id="current-year"></span>
-              <!-- Dynamically set the year -->
+              <a class="fw-semibold" href="{% url 'pricing:home' %}" style="color: white">Connect HR</a> &copy; <span id="current-year"></span>
             </div>
             <div class="col-12 col-sm-6 text-center text-sm-end footer-icons">
-              <!-- Social Media Links -->
-              <a
-                href="https://www.instagram.com/connecthr_sa/?igsh=MXVoaTh0n3v5Mm5mdg%3D%3D#"
-                target="_blank"
-              >
-                <i class="fab fa-instagram footer-logo" aria-hidden="true"></i>
+              <a href="https://www.instagram.com/connecthr_sa/?igsh=MXVoaTh0n3v5Mm5mdg%3D%3D#" target="_blank">
+                <i class="fab fa-instagram footer-logo"></i>
               </a>
-              <a
-                href="https://www.youtube.com/@ConnectHRPodcast"
-                target="_blank"
-              >
-                <i class="fab fa-youtube footer-logo" aria-hidden="true"></i>
+              <a href="https://www.youtube.com/@ConnectHRPodcast" target="_blank">
+                <i class="fab fa-youtube footer-logo"></i>
               </a>
-              <a
-                href="https://www.linkedin.com/company/connecthrsa"
-                target="_blank"
-              >
-                <i class="fab fa-linkedin footer-logo" aria-hidden="true"></i>
+              <a href="https://www.linkedin.com/company/connecthrsa" target="_blank">
+                <i class="fab fa-linkedin footer-logo"></i>
               </a>
-              <a
-                href="https://www.facebook.com/people/Connect-HR/61550998671947/"
-                target="_blank"
-              >
-                <i
-                  class="fab fa-facebook-square footer-logo"
-                  aria-hidden="true"
-                ></i>
+              <a href="https://www.facebook.com/people/Connect-HR/61550998671947/" target="_blank">
+                <i class="fab fa-facebook-square footer-logo"></i>
               </a>
             </div>
           </div>
@@ -284,89 +175,35 @@
       </footer>
 
       <!-- Feedback Modal -->
-      <div
-        class="modal fade"
-        id="feedbackModal"
-        tabindex="-1"
-        aria-labelledby="feedbackModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <!-- Modal Header -->
             <div class="modal-header" style="background-color: #9c6ecf">
               <h5 class="modal-title" id="feedbackModalLabel">Contact Us</h5>
-              <button
-                class="btn-close"
-                type="button"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
-            <!-- Modal Body -->
             <div class="modal-body" style="background-color: #9c6ecf">
-              <form
-                id="contactForm"
-                action="https://api.web3forms.com/submit"
-                method="POST"
-              >
+              <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <div class="form-floating mb-3">
-                  <input
-                    class="form-control"
-                    id="name"
-                    type="text"
-                    name="name"
-                    placeholder="Enter your name..."
-                    required
-                  />
+                  <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
                   <label for="name" style="color: #5e4a9f">Company Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input
-                    class="form-control"
-                    id="contact-person"
-                    type="text"
-                    name="contact_person"
-                    placeholder="Enter contact person's name..."
-                    required
-                  />
-                  <label for="contact-person" style="color: #5e4a9f"
-                    >Contact Person Name</label
-                  >
+                  <input class="form-control" id="contact-person" type="text" name="contact_person" placeholder="Enter contact person's name..." required />
+                  <label for="contact-person" style="color: #5e4a9f">Contact Person Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input
-                    class="form-control"
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="name@example.com"
-                    required
-                  />
+                  <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
                   <label for="email" style="color: #5e4a9f">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    placeholder="Enter your message..."
-                    style="height: 10rem"
-                    required
-                  ></textarea>
+                  <textarea class="form-control" id="message" name="message" placeholder="Enter your message..." style="height: 10rem" required></textarea>
                   <label for="message" style="color: #5e4a9f">Message</label>
                 </div>
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-lg" type="submit">
-                    Submit
-                  </button>
+                  <button class="btn btn-primary btn-lg" type="submit">Submit</button>
                 </div>
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="2ae97d79-731b-47bb-92b5-9cab34803def"
-                />
+                <input type="hidden" name="access_key" value="2ae97d79-731b-47bb-92b5-9cab34803def" />
               </form>
             </div>
           </div>
@@ -376,8 +213,7 @@
 
     <!-- JavaScript to update the copyright year -->
     <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
+      document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 
     <!-- Bootstrap JS & Popper.js -->
